@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloGlobal.css">
+    <title>Nossos Apartamentos</title>
+</head>
+
+<body>
+    <header>
+                <img src="assets/logo.png" alt="Logotipo Beling Apartamentos">
+        <nav>
+            <ul>
+                <a href="index.html">Início</a>
+                <a href="realState.html">Nossos Imóveis</a>
+                <a href="contact.html">Contate-nos</a>
+                <a href="register.html">Crie uma conta</a>
+                <a href="login.html">Faça login</a>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section id="nossos-apartamentos">
+        <h1>Nossos Apartamentos</h1>
+        <p>Conheça alguns dos imóveis da Beling: conforto, qualidade e excelente localização para você viver melhor.</p>
+
+        <div class="apartamento" title="Um dos melhores e mais completos apartamentos de nosso catálogo">
+            <h2>Apartamento Luxo</h2>
+            <img src="https://img.freepik.com/fotos-gratis/quarto-moderno-e-espacoso-com-grande-janela-panoramica_7502-7289.jpg?semt=ais_hybrid&w=740&q=80"
+                alt="Apartamento Luxo">
+            <p>Ambientes amplos, acabamento premium e vista privilegiada.</p>
+            <button data-id="1" data-nome="Luxo">Gostei! Quero alugar.</button>
+        </div>
+
+        <div class="apartamento"
+            title="Excelente opção para quem prioriza excelência em conforto e design ao mesmo tempo">
+            <h2>Apartamento Premium</h2>
+            <img src="https://img.freepik.com/fotos-premium/quarto-com-cama-king-aconchegante-na-casa_41487-661.jpg"
+                alt="Apartamento Premium">
+            <p>Design moderno, ótima iluminação natural e alto padrão de conforto.</p>
+            <button data-id="2" data-nome="Premium">Gostei! Quero alugar.</button>
+        </div>
+
+        <div class="apartamento" title="Apartamentos simples, que não deixam a desejar!">
+            <h2>Apartamento Compacto</h2>
+            <img src="https://img.freepik.com/fotos-gratis/arranjo-de-quartos-pequenos-e-juvenis_23-2151113869.jpg?semt=ais_hybrid&w=740&q=80"
+                alt="Apartamento Compacto">
+            <p>Praticidade e funcionalidade com excelente custo-benefício.</p>
+            <button data-id="4" data-nome="Compacto">Gostei! Quero alugar.</button>
+        </div>
+
+    </section>
+    <section>
+        <h2>Veja todas as opções de imóveis Beling</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Categoria do apartamento</th>
+                    <th>Valor mensal (aluguel)</th>
+                    <th>Incluso</th>
+                    <th>Não incluso</th>
+                    <th>Disponibilidade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Luxo</td>
+                    <td>R$ 3.000,00*</td>
+                    <td>Internet, TV a cabo, manutenção, estacionamento, academia</td>
+                    <td>- - -</td>
+                    <td>5 disponíveis / 10</td>
+                    <td><button data-id="1">Quero alugar</button></td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>R$ 4.000,00*</td>
+                    <td>Internet, TV a cabo, estacionamento</td>
+                    <td rowspan="2">Academia</td>
+                    <td>8 disponíveis / 35</td>
+                    <td><button data-id="2">Quero alugar</button></td>
+                </tr>
+                <tr>
+                    <td>Casa Baixa</td>
+                    <td>R$ 1.500,00*</td>
+                    <td>Internet, TV a cabo,estacionamento para 2 carros</td>
+                    <td>2 disponíveis / 15</td>
+                    <td><button data-id="3">Quero alugar</button></td>
+                </tr>
+                <tr>
+                    <td>Compacto</td>
+                    <td>R$ 1.000,00*</td>
+                    <td rowspan="2">Internet, Tv a cabo</td>
+                    <td rowspan="2">Estacionamento, academia</td>
+                    <td>3 disponíveis / 50</td>
+                    <td><button data-id="4">Quero alugar</button></td>
+                </tr>
+                <tr>
+                    <td>Kitnet</td>
+                    <td>R$ 500,00*</td>
+                    <td>1 disponível / 35</td>
+                    <td><button data-id="5">Quero alugar</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6" rowspan="2">* Valores sujeitos a alterações sem aviso prévio. Consulte
+                        disponibilidade e condições de aluguel.</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+</body>
+
+</html>

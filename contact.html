@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloGlobal.css">
+    <title>Time Beling</title>
+</head>
+
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logotipo Beling Apartamentos">
+        <nav>
+            <ul>
+                <a href="index.html">Início</a>
+                <a href="realState.html">Nossos Imóveis</a>
+                <a href="contact.html">Contate-nos</a>
+                <a href="register.html">Crie uma conta</a>
+                <a href="login.html">Faça login</a>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Contatos</h1>
+            <h2>Aqui é possível encontrar todas as formas de entrar em contato com nosso time</h2>
+            <ul>
+                <li>
+                    Por meio físico:
+                    <ol>
+                        <li><strong>Agência:</strong> R. POMERANA, n° 77 - São Luiz, Santa Maria de Jetibá - ES,
+                            29645-000</li>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.159646560905!2d-40.741813423854495!3d-20.001813240550597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb77dd92209eb3f%3A0xe5a01b0e74259f1e!2sEdif%C3%ADcio%20Beling!5e0!3m2!1spt-BR!2sbr!4v1775137023749!5m2!1spt-BR!2sbr"
+                            width="600" height="225" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </ol>
+                </li>
+                <li>
+                    Por meio digital:
+                    <ol>
+                        <li><strong>Telefone gratuito:</strong><a href="tel:+55270800123321">0800 123 321</a></li>
+                        <li><strong>E-mail:</strong> contato@beling.com</li>
+                        <li><strong>Chat:</strong> <a href="#">Abrir Chat</a></li>
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/552740028922">(27) 4002-8922</a></li>
+                    </ol>
+                </li>
+                <li>
+                    Por meio das redes sociais:
+                    <ol>
+                        <li><strong>Instagram:</strong> @belingApartamentos</li>
+                        <li><strong>Facebook:</strong> Beling Apartamentos</li>
+                    </ol>
+                </li>
+                <li>
+                    Por meio de formulário:
+                    <form action="#">
+                        <label for="nome">Nome:</label>
+                        <input id="nome" type="text" placeholder="Digite seu nome" required name="nome"
+                            oninvalid="this.setCustomValidity('Por favor, Informe seu nome completo.')"
+                            oninput="this.setCustomValidity('')" minlength="5">
+
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="e-mail" placeholder="Digite seu melhor E-mail" required
+                            oninvalid="this.setCustomValidity('Digite o E-mail com o formato correto.')"
+                            oninput="this.setCustomValidity('')" name="email">
+
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea name="mensagem" id="mensagem" placeholder="Informe sua demanda" minlength="10"
+                            maxlength="500" required
+                            oninvalid="this.setCustomValidity('A mensagem deve conter entre 10 e 500 caracteres')"
+                            oninput="this.setCustomValidity('')"></textarea>
+
+                        <input type="radio" name="termo" id="termo" required
+                            oninvalid="this.setCustomValidity('Aceite este termo para que sua mensagem seja enviada.')"
+                            oninput="this.setCustomValidity('')">
+                        <label for="termo">Aceito que meus dados pessoais sejam processados pelo Beling
+                            Apartamentos</label>
+                        <input type="submit" value="Enviar mensagem">
+                    </form>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Beling Apartamentos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

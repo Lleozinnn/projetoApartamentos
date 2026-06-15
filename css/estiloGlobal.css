@@ -1,0 +1,194 @@
+/* IMPORTAÇÕES E DEFINIÇÕES ESSENCIAIS */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Basic&display=swap');
+body {
+    margin: 0;
+    color: #2D2D2D;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+* {
+    font-family: "Sora";
+}
+:root {
+    /* Cores de Marca (Baseadas no Logo) */
+    --brand-primary: #2d5a27;      /* Verde assinatura profundo (sofisticado) */
+    --brand-secondary: #c2a649;    /* Dourado/Bege elegante para destaques */
+    --brand-light: #f4f6f0;        /* Off-white esverdeado muito claro (fundos principais) */
+    
+    /* Fundos Alternativos */
+    --bg-dark: #1b3318;            /* Verde ultra-escuro para seções de grande impacto */
+    --bg-card: #ffffff;            /* Branco puro para destacar os cards do fundo */
+
+    /* Cores de Texto */
+    --text-main: #1c2b19;          /* Verde quase preto para máxima legibilidade */
+    --text-muted: #556b52;         /* Verde acinzentado para parágrafos e subtítulos */
+    --text-light: #ffffff;         /* Texto branco para fundos escuros */
+
+    /* Elementos Interativos e Bordas */
+    --border-color: #e2e8e0;       /* Linhas e bordas sutis */
+    --cta-hover: #22451d;          /* Variação do verde para estados de hover */
+}
+/* ESTILIZAÇÃO DO CABEÇALHO E SEUS ELEMENTOS */
+header {
+    background-color: #556b2f1a;
+    box-shadow: 0 0 30px #00000059;
+    margin-top: 20px;
+    padding: 20px;
+    width: calc(85% - 40px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    left: 50%;
+    transform: translate(-50%,0);
+    justify-content: space-between;
+    z-index: 2;
+}
+header img {
+    height: 50px;
+    margin-right: 30px;
+}
+.menu {
+    display: none;
+    margin: 0;
+    cursor: pointer;
+}
+nav {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+}
+nav ul button {
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: var(--brand-primary);
+    border-radius: 10px;
+    padding: 5px;
+    color: var(--text-light);
+    width: 130px;
+    border: none;
+}
+nav ul:nth-child(2) button {
+    color: var(--brand-primary);
+    backdrop-filter: blur(40px);
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 15pt;
+    width: 150px;
+}
+nav ul:nth-child(2) button:hover {
+    border-bottom: 5px solid var(--text-light);
+}
+nav ul:nth-child(1) button:hover {
+    background-color: var(--brand-secondary);
+}
+/* Estilização do rodapé do site */
+footer {
+    background-color: var(--bg-dark);
+    margin: 0;
+    grid-column: 2;
+    grid-row: 5;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 20px, 20px, 40px, rgba(85, 107, 47, 0.5);
+    backdrop-filter: blur(50px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+}
+footer p {
+    grid-column: span 2;
+    grid-row: 2;
+    color: var(--text-muted);
+}
+footer img {
+    grid-column: 1;
+    grid-row: 1;
+    height: 90%;
+}
+#content {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    background-color: #e2e8e0;
+    padding: 10px;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 10px #e2e8e0;
+    gap: 20px;
+}
+.redes {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 20px;
+}
+.redes h3 {
+    grid-column: span 2;
+}
+.redes div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-left: 10px solid var(--brand-primary);
+    border-radius: 10px;
+    background-color: var(--brand-secondary);
+    box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.103);
+}
+.redes div img {
+    margin-left: 5px;
+    height: 70%;
+}
+.redes div p {
+    margin-left: 10px;
+    font-weight: bold;
+}
+.contato {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2);
+}
+.contato h3 {
+    grid-column: span 2;
+}
+.contato div img {
+    height: 50px;
+}
+@media (max-width: 1150px) {
+    .menu {
+        display: flex;
+    }
+    header nav {
+        display: none;
+    }
+    footer {
+        grid-template-columns: auto;
+    }
+    #content {
+        grid-row: 2;
+        grid-column: 1;
+        margin: 0;
+    }
+    footer > p {
+        grid-row: 3;
+        margin-top: 50px;
+        grid-column: 1;
+    }
+    footer {
+        font-size: 9pt;
+    }
+    #content  article:nth-child(1) div img{
+        height: auto;
+        width: auto;
+    }
+}

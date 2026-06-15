@@ -1,0 +1,443 @@
+/* DEFINIÇÃO DA MAIN, E VARIÁVEIS DE ESTILO ESSENCIAIS */
+main {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+}
+
+:root {
+    /* Definindo altura das seções */
+    --hero-height: 100vh;
+    --beneficios-height: 85vh;
+    --sobre-height: 90vh;
+    --depoimentos-height: 100vh;
+    --contato-height: 80vh;
+
+    /* Cores de Marca (Baseadas no Logo) */
+    --brand-primary: #2d5a27;      /* Verde assinatura profundo (sofisticado) */
+    --brand-secondary: #c2a649;    /* Dourado/Bege elegante para destaques */
+    --brand-light: #f4f6f0;        /* Off-white esverdeado muito claro (fundos principais) */
+    
+    /* Fundos Alternativos (Para criar ritmo visual entre as seções de 100vh) */
+    --bg-dark: #1b3318;            /* Verde ultra-escuro para seções de grande impacto */
+    --bg-card: #ffffff;            /* Branco puro para destacar os cards do fundo */
+
+    /* Cores de Texto */
+    --text-main: #1c2b19;          /* Verde quase preto para máxima legibilidade */
+    --text-muted: #556b52;         /* Verde acinzentado para parágrafos e subtítulos */
+    --text-light: #ffffff;         /* Texto branco para fundos escuros */
+
+    /* Elementos Interativos e Bordas */
+    --border-color: #e2e8e0;       /* Linhas e bordas sutis */
+    --cta-hover: #22451d;          /* Variação do verde para estados de hover */
+}
+
+/* ESTILIZAÇÃO DA HERO E SEUS ELEMENTOS */
+#hero {
+    display: grid;
+    background: linear-gradient(135deg,
+            #F7F5EF 0%,
+            #E8DFC9 30%,
+            #BFCFAE 65%,
+            #D6B97B 100%);
+    height: var(--hero-height);
+    grid-column: span 3;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: repeat(15, auto);
+}
+
+#hero article {
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+    grid-column: 2;
+    grid-row: 8;
+}
+
+#hero form {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-column: 2;
+    grid-row: 9;
+}
+
+#hero form * {
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: 3px solid var(--border-color);
+    outline: none;
+}
+#hero form input[type="submit"] {
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    border: none;
+}
+#hero form input[type="submit"]:hover {
+    background-color: var(--cta-hover);
+}
+#hero article h1 {
+    font-size: 5em;
+    color: var(--text-main);
+}
+
+#hero article p {
+    font-size: 1.7em;
+    color: var(--text-muted);
+}
+#hero a {
+    display: grid;
+    grid-column: span 3;
+    grid-row: 14;
+    border: none;
+    justify-items: center;
+    background-color: transparent;
+}
+#hero a img {
+    height: 100%;
+    rotate: 90deg;
+}
+/* ESTILIZAÇÃO DOS BENEFÍCIOS E SEUS ELEMENTOS */
+#beneficios {
+    display: grid;
+    grid-column: span 3;
+    width: 100%;
+    place-items: center;
+    place-items: center;
+    background: radial-gradient();
+    min-height: var(--beneficios-height);
+    background-color: var(--bg-dark);
+}
+
+#beneficios h2 {
+    font-size: 5em;
+    text-align: center;
+    color: var(--text-light);
+}
+
+#beneficios div {
+    margin: 100px;
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    /* background-color: #74974e; */
+    gap: 40px;
+}
+
+#beneficios div article {
+    text-align: center;
+    background-color: var(--bg-card);
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 230px auto auto;
+    max-width: 410px;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
+}
+
+#beneficios div article h3 {
+    margin: 10px;
+    font-size: 1.7em;
+    color: var(--text-main);
+}
+
+#beneficios div article p {
+    margin: 10px;
+    font-size: 1.2em;
+    color: var(--text-muted);
+}
+
+#beneficios div article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* ESTILIZAÇÃO DA SEÇÃO SOBRE E SEUS ELEMENTOS */
+#sobre {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: auto 1fr;
+    min-height: var(--sobre-height);
+    background-color: var(--brand-light);
+}
+
+#sobre h2 {
+    grid-column: span 3;
+    grid-row: 1;
+    text-align: center;
+    font-size: 5em;
+    color: var(--text-main);
+}
+
+#sobre div {
+    width: 100%;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(6, 1fr);
+    margin: 50px;
+}
+
+#sobre div article {
+    padding-left: 10px;
+    border-left: 20px solid var(--brand-secondary);
+    margin-bottom: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#sobre div article p {
+    margin: 0;
+    text-align: start;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    columns: var(--text-muted);
+}
+
+#sobre div article h3 {
+    font-size: 2.5em;
+    margin: 0;
+    text-align: start;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+/* ESTILIZAÇÃO DEPOIMENTOS E SEUS ELEMENTOS */
+#depoimentos {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    min-height: var(--depoimentos-height)
+}
+
+#depoimentos h2 {
+    display: grid;
+    font-size: 5em;
+    grid-row: 1;
+    text-align: center;
+    align-items: center;
+    color: var(--text-main);
+}
+
+#depoimentos div {
+    grid-row: 2;
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(3, minmax(auto, 800px));
+    grid-template-rows: auto;
+    align-items: center;
+    justify-self: center;
+    gap: 50px;
+    margin: 50px;
+}
+
+#depoimentos div article {
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+    border-top-left-radius: 55px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 70px auto;
+    grid-template-rows: 70px 150px 500px 50px;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.3);
+}
+
+#depoimentos div article span {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.5em;
+}
+
+.foto_perfil {
+    height: 70px;
+    width: 70px;
+    grid-row: 1;
+    grid-column: 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.fotos {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    grid-row: 3;
+    height: 500px;
+    grid-column: span 2;
+}
+
+.comment {
+    grid-column: span 2;
+    grid-row: 2;
+    color: var(--text-main);
+    font-style: italic;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.author {
+    color: var(--brand-primary);
+    font-weight: bold;
+    grid-column: 2;
+    grid-row: 4;
+    text-align: end;
+    font-size: 1.4em;
+}
+
+/* ESTILIZAÇÃO CONTATO E SEUS ELEMENTOS */
+#newsletter {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://i.pinimg.com/originals/3f/69/dd/3f69dd7616807bd619bca61c0aa90b0d.jpg");
+    grid-column: span 3;
+    display: grid;
+    min-height: var(--contato-height);
+    grid-template-rows: repeat(4, auto);
+    place-items: center;
+    text-align: center;
+    background-color: var(--brand-light);
+}
+#newsletter article {
+    grid-row: 2;
+    color: var(--text-main);
+    background-color: #f9fff927;
+    backdrop-filter: blur(10px);
+    margin: 50px;
+    padding: 30px;
+    border-radius: 15px;
+}
+#newsletter article p {
+    font-size: 1.5em;
+}
+#newsletter article h2{
+    font-size: 5em;
+}
+#newsletter form {
+    grid-row: 3;
+    display: flex;
+    flex-direction:column;
+    background-color: var(--bg-card);
+    padding: 50px;
+    border-radius: 12px;
+    width: 50%;
+    max-width: 500px;
+    box-shadow: 15px 15px 15px 10px #00000011;
+    border: 1px solid var(--border-color);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+#newsletter form div label {
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+#newsletter form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: start;
+}
+#newsletter form div input {
+    background-color: var(--brand-light);
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 1.19rem;
+    padding: 10px;
+    color: var(--text-main);
+}
+#newsletter form div input:focus {
+    outline: none;
+    border: 2px solid var(--brand-primary);
+}
+#newsletter form input[type="submit"] {
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: none;
+}
+#newsletter form input[type="submit"]:hover {
+    background-color: var(--cta-hover);
+    cursor: pointer;
+}
+/* Breakpoint - TABLET */
+@media (max-width: 1150px) {
+    main{
+        font-size: 14px;
+    }
+    /* Beneficios */
+    #beneficios div {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    /* Sobre */
+    #sobre {
+        height: auto;
+    }
+    /* Depoimentos */
+    #depoimentos {
+        height: auto;
+    }
+    #depoimentos div {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+/* Breakpoint - SMARTPHONE */
+@media (max-width: 768px) {
+    main{
+        font-size: 12px;
+    }
+    #hero article {
+        grid-column: span 3;
+        margin: 5px;
+        text-align: center;
+    }
+
+    #hero form {
+        display: grid;
+        grid-column: span 3;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        margin: 10px;
+    }
+
+    #hero form * {
+        height: 55px;
+    }
+    /* Beneficios */
+    #beneficios div {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #beneficios {
+        height: auto;
+    }
+    #sobre, #depoimentos {
+        font-size: 8pt;
+    }
+    #sobre div {
+        margin: 15px;
+    }
+    #newsletter article {
+        margin: 10px;
+    }
+    #newsletter {
+        font-size: 7pt;
+    }
+}
