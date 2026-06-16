@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloGlobal.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Entrar na conta Beling</title>
+</head>
+
+<body>
+    <header>
+        <img src="../../assets/logo.png" alt="Logotipo Beling Apartamentos">
+        <nav>
+            <ul>
+                <a href="index.html"><button>Início</button></a>
+                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="contact.html"><button>Contatos</button></a>
+            </ul>
+            <ul>
+                <a href="register.html"><button>Cadastro</button></a>
+                <a href="login.html"><button>Login</button></a>
+            </ul>
+        </nav>
+        <img src="../../assets/menu.svg" alt="Menu" class="menu">
+    </header>
+    <main>
+        <h1>Log-in</h1>
+        <h2>Entre com sua conta Beling para prosseguir com a locação</h2>
+        <form action="rental.html">
+            <label for="cpf">CPF:</label>
+            <input type="tel" placeholder="Informe o CPF" required pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
+                oninvalid="this.setCustomValidity('Por favor, informe seu CPF no padrão correto com pontos e hífen.')"
+                oninput="this.setCustomValidity('')" name="cpf">
+            
+            <label for="senha">Senha:</label>
+            <input type="password" placeholder="Informe sua senha Beling" required
+                oninvalid="this.setCustomValidity('Por favor, informe sua senha.')" oninput="this.setCustomValidity('')"
+                name="senha">
+            
+            <input type="submit" value="Entrar">
+            <a href="register.html">Não possuo a conta Beling</a>
+        </form>
+    </main>
+   <footer>
+        <img src="../assets/logo.png" alt="Logo Beling apartamentos">
+        <section id="content">
+            <article class="redes">
+                <h3>Nos sigam em nossas redes sociais</h3>
+                <div>
+                    <img src="../assets/facebook.svg" alt="Facebook">
+                    <p>Beling Apartamentos</p>
+                </div>
+                <div>
+                    <img src="../assets/youtube.svg" alt="Youtube">
+                    <p>@BelingApartamentos</p>
+                </div>
+                <div>
+                    <img src="../assets/instagram.svg" alt="Instagram">
+                    <p>@BelingApartamentos</p>
+                </div>
+                <div>
+                    <img src="../assets/github.svg" alt="GitHub">
+                    <p>Lleozinnn</p>
+                </div>
+            </article>
+            <article class="contato">
+                <h3>Contate-nos</h3>
+                <div>
+                    <img src="../assets/phone-call.svg" alt="Telefone">
+                    <p>(27) 4002 - 8922</p>
+                </div>
+                <div>
+                    <img src="../assets/mail.svg" alt="E-mail">
+                    <p>contato@beling.com</p>
+                </div>
+            </article>
+        </section>
+        <p>© 2026 Beling Apartamentos. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
