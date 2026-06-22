@@ -1,4 +1,4 @@
-// Criação da lista de apartamentos disponiveis.
+// Criação da lista de apartamentos disponiveis. Já feito pelo Léo 
 
 // Receber dados da URL para definir as opçoes que se encaixam com o perfil do usuario.
 
