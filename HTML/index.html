@@ -32,11 +32,19 @@
                 <p>Insira as informações e buscaremos as melhores opções para você.</p>
             </article>
             <form action="rental.html" method="get">
-                <select name="localidade" id="localidade">
+                <select name="localidade" id="localidade" required>
+                    <option value="" disabled selected>Escolha o Local</option>
                     <option value="Santa Teresa">Santa Teresa</option>
-                    <option value="Santa Maria de Jetibá" selected>Santa Maria de Jetibá</option>
+                    <option value="Santa Maria de Jetibá">Santa Maria de Jetibá</option>
                 </select>
-                <input type="text" placeholder="Descreva o apartamento" name="descricao">
+                <select name="negociacao" id="sltNegociacao" required>
+                    <option value="" disabled selected>Escolha a Negociação</option>
+                    <option value="venda">Comprar</option>
+                    <option value="aluguel">Alugar</option>
+                </select>
+                <select name="preco" id="sltPreco" required>
+                    <option value="" disabled selected>Selecione a Negociação</option>
+                </select>
                 <input type="submit" value="Buscar">
             </form>
             <a href="#beneficios">
@@ -199,7 +207,7 @@
         </section>
         <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
-    <script src="../js/index.js"></script>
+    <script src="../js/index.js"></script>  
 </body>
 
 </html>
