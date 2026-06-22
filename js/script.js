@@ -1,1 +1,0 @@
-const titulo = document.querySelector("#hero");
