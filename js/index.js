@@ -205,14 +205,14 @@ function faixaPreco (negociacao){
     // Min 950 Max 5500
     for(let ind = 950; ind < 5500; ind += 500){
       let max = ind + 500;
-      let opt = `<option value="">${ind} - ${max}</option>`;
+      let opt = `<option value="${ind}-${max}">${ind} - ${max}</option>`;
       sltPreco.innerHTML += opt;
     }
   }else{
     // Min 100.000 Max 850.000
     for(let ind = 100000; ind < 850000; ind += 50000){
       let max = ind + 50000;
-      let opt = `<option value="">${ind} - ${max}</option>`;
+      let opt = `<option value="${ind}-${max}">${ind} - ${max}</option>`;
       sltPreco.innerHTML += opt;
     }
   }
