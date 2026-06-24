@@ -1,0 +1,10 @@
+main {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: minmax(20px, auto) auto minmax(20px, auto);
+    grid-row: 150px auto 150px;
+}
+main section {
+    grid-column: 2;
+    grid-row: 2;
+}
