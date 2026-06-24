@@ -44,11 +44,19 @@
                 <p>Insira as informações e buscaremos as melhores opções para você.</p>
             </article>
             <form action="rental.html" method="get">
-                <select name="localidade" id="localidade">
+                <select name="localidade" id="localidade" required>
+                    <option value="" disabled selected>Escolha o Local</option>
                     <option value="Santa Teresa">Santa Teresa</option>
-                    <option value="Santa Maria de Jetibá" selected>Santa Maria de Jetibá</option>
+                    <option value="Santa Maria de Jetibá">Santa Maria de Jetibá</option>
                 </select>
-                <input type="text" placeholder="Descreva o apartamento" name="descricao">
+                <select name="negociacao" id="sltNegociacao" required>
+                    <option value="" disabled selected>Escolha a Negociação</option>
+                    <option value="venda">Comprar</option>
+                    <option value="aluguel">Alugar</option>
+                </select>
+                <select name="preco" id="sltPreco" required>
+                    <option value="" disabled selected>Selecione a Negociação</option>
+                </select>
                 <input type="submit" value="Buscar">
             </form>
             <a href="#beneficios">
@@ -182,19 +190,19 @@
             <article class="redes">
                 <h3>Nos sigam em nossas redes sociais</h3>
                 <div>
-                    <img src="../assets/facebook.svg" alt="Facebook">
-                    <p>Pinnacles Apartamentos</p>
+                    <img src="../assets/icons/facebook.svg" alt="Facebook">
+                    <p>Pinnacle Apartamentos</p>
                 </div>
                 <div>
-                    <img src="../assets/youtube.svg" alt="Youtube">
-                    <p>@Pinnacles</p>
+                    <img src="../assets/icons/youtube.svg" alt="Youtube">
+                    <p>@Pinnacle</p>
                 </div>
                 <div>
-                    <img src="../assets/instagram.svg" alt="Instagram">
-                    <p>@Pinnacles</p>
+                    <img src="../assets/icons/instagram.svg" alt="Instagram">
+                    <p>@Pinnacle</p>
                 </div>
                 <div>
-                    <img src="../assets/github.svg" alt="GitHub">
+                    <img src="../assets/icons/github.svg" alt="GitHub">
                     <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a href="https://github.com/Lleozinnn">Leonardo Beling</a></p>
                 </div>
             </article>
@@ -205,15 +213,14 @@
                     <p>(27) 4002 - 8922</p>
                 </div>
                 <div>
-                    <img src="../assets/mail.svg" alt="E-mail">
+                    <img src="../assets/icons/mail.svg" alt="E-mail">
                     <p>contato@pinnacle.com</p>
                 </div>
             </article>
         </section>
-        <p>© 2026 Beling Apartamentos. Todos os direitos reservados.</p>
+        <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
-    <script src="../js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../js/index.js"></script>  
 </body>
 
 </html>
