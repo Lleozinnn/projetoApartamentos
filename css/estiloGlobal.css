@@ -66,6 +66,7 @@ nav {
 }
 nav ul {
     display: flex;
+    margin-bottom: 0;
 }
 nav ul button {
     margin-right: 10px;
@@ -86,10 +87,11 @@ nav ul:nth-child(2) button {
     width: 150px;
 }
 nav ul:nth-child(2) button:hover {
-    border-bottom: 5px solid var(--text-light);
+    color: var(--brand-light);
+    background-color: var(--brand-primary);
 }
 nav ul:nth-child(1) button:hover {
-    background-color: var(--brand-secondary);
+    background-color: var(--text-muted);
 }
 /* Estilização do rodapé do site */
 footer {
