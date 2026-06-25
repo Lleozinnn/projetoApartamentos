@@ -41,7 +41,7 @@
             <h1>Cadastre-se</h1>
             <h2>Preencha o formulário a seguir e realize seu cadastro em instantes</h2>
             <form action="login.html">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome completo:</label>
                 <input id="inNome" type="text" placeholder="Digite seu nome" required name="nome"
                     oninvalid="this.setCustomValidity('Por favor, Informe seu nome completo.')"
                     oninput="this.setCustomValidity('')" minlength="5">
@@ -92,7 +92,7 @@
                 <input type="checkbox" name="termos" id="termo3" value="termo3">
                 <label for="termo3">Aceito receber comunicações sobre novidades e ofertas</label>
                 
-                <input type="submit" value="Efetuar Cadastro">
+                <input type="submit" id="btnCadastrar" value="Efetuar Cadastro">
                 <a href="login.html">Já tenho a conta Beling</a>
             </form>
         </section>
