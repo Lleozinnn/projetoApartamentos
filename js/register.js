@@ -14,12 +14,6 @@ const outSaida = document.getElementById("outSaida");
 
 // Escutar evento do botão de cadastro
 btnCadastrar.addEventListener("click", (event) => cadastrar(event));
-console.log(rdGenero);
-
-
-
-
-
 
 // Criar função que efetua o cadastro no local storage
 function cadastrar(event) {

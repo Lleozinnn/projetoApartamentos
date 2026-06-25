@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Apartamento</title>
+    <link rel="stylesheet" href="../css/estiloGlobal.css">
+</head>
+
+<body>
+    <header>
+        <img src="../../assets/logo.png" alt="Logotipo Beling Apartamentos">
+        <nav>
+            <ul>
+                <a href="index.html"><button>Início</button></a>
+                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="contact.html"><button>Contatos</button></a>
+            </ul>
+            <ul>
+                <a href="register.html"><button>Cadastro</button></a>
+                <a href="login.html"><button>Login</button></a>
+            </ul>
+        </nav>
+        <div class="nav-item dropdown menu">
+            <img src="../assets/icons/menu.svg" alt="Seções" class="nav-link dropdown-toggle" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Início</a></li>
+                <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
+                <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
+                <li><a class="dropdown-item" href="about.html">Sobre</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <h1>Cadastro de Apartamento</h1>
+        <form action="#" method="post">
+            <div>
+                <label for="inNumero">Número do apartamento:</label>
+                <input type="text" id="inNumero" name="numero" required>
+            </div>
+
+            <div>
+                <label for="inCidade">Cidade:</label>
+                <select id="inCidade" name="cidade" required>
+                    <option value="" disabled selected>Selecione uma cidade</option>
+                    <option value="st">Santa Teresa</option>
+                    <option value="smj">Santa Maria de Jetibá</option>
+                </select>
+            </div>
+            <div>
+                <label for="inPreco">Preço:</label>
+                <input type="number" id="inPreco" name="preco" required><br><br>
+            </div>
+            <div>
+                <label for="inComodos">Cômodos:</label>
+                <input type="text" id="inComodos" name="comodos" required><br><br>
+            </div>
+            <div>
+                <label for="sltNegociacao">Tipo de Negociação:</label>
+                <select name="negociacao" id="sltNegociacao" required>
+                    <option value="" disabled selected>Selecione o tipo de negociação</option>
+                    <option value="venda">Venda</option>
+                    <option value="aluguel">Aluguel</option>
+                </select>
+            </div>
+            <div>
+                <label for="inIncluso">Incluso:</label>
+                <input type="text" id="inIncluso" name="incluso" required>
+            </div>
+
+            <input type="submit" id="btnCadastrar" value="Cadastrar">
+
+            <p id="outSaida"></p>
+        </form>
+    </main>
+    <footer>
+        <img src="../assets/logo.png" alt="Logo Beling apartamentos">
+        <section id="content">
+            <article class="redes">
+                <h3>Nos sigam em nossas redes sociais</h3>
+                <div>
+                    <img src="../assets/icons/facebook.svg" alt="Facebook">
+                    <p>Pinnacle Apartamentos</p>
+                </div>
+                <div>
+                    <img src="../assets/icons/youtube.svg" alt="Youtube">
+                    <p>@Pinnacle</p>
+                </div>
+                <div>
+                    <img src="../assets/icons/instagram.svg" alt="Instagram">
+                    <p>@Pinnacle</p>
+                </div>
+                <div>
+                    <img src="../assets/icons/github.svg" alt="GitHub">
+                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a
+                            href="https://github.com/Lleozinnn">Leonardo Beling</a></p>
+                </div>
+            </article>
+            <article class="contato">
+                <h3>Contate-nos</h3>
+                <div>
+                    <img src="../assets/icons/phone-call.svg" alt="Telefone">
+                    <p>(27) 4002 - 8922</p>
+                </div>
+                <div>
+                    <img src="../assets/icons/mail.svg" alt="E-mail">
+                    <p>contato@pinnacle.com</p>
+                </div>
+            </article>
+        </section>
+        <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../js/register-apartment.js"></script>
+</body>
+
+</html>
