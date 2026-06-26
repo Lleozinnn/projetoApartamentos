@@ -152,8 +152,13 @@ footer img {
     height: 70%;
 }
 .redes div p {
-    margin-left: 10px;
-    font-weight: bold;
+    margin: 10px;
+    font-weight: bold; 
+    color: var(--text-muted);
+}
+.redes div p a{
+    text-decoration: none;
+    color: var(--text-muted);
 }
 .contato {
     display: grid;
@@ -166,7 +171,7 @@ footer img {
 .contato div img {
     height: 50px;
 }
-@media (max-width: 1150px) {
+@media (max-width: 1300px) {
     .menu {
         display: flex;
     }
@@ -192,5 +197,11 @@ footer img {
     #content  article:nth-child(1) div img{
         height: auto;
         width: auto;
+    }
+}
+@media (max-width: 768px) {
+    .redes {
+        display: flex;
+        flex-direction: column;
     }
 }
