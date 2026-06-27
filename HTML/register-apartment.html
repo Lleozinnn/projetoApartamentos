@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Apartamento</title>
-    <link rel="stylesheet" href="../css/estiloGlobal.css">
+    <!-- <link rel="stylesheet" href="../css/estiloGlobal.css"> -->
 </head>
 
 <body>
@@ -47,12 +47,11 @@
             </div>
 
             <div>
-                <label for="inCidade">Cidade:</label>
-                <select id="inCidade" name="cidade" required>
-                    <option value="" disabled selected>Selecione uma cidade</option>
-                    <option value="st">Santa Teresa</option>
-                    <option value="smj">Santa Maria de Jetibá</option>
-                </select>
+                <span>Tipo de Negociação:</span>
+                <input type="radio" id="venda" name="negociacao" value="venda" required>
+                <label for="venda">Venda</label>
+                <input type="radio" id="aluguel" name="negociacao" value="aluguel" required>
+                <label for="aluguel">Aluguel</label>
             </div>
             <div>
                 <label for="inPreco">Preço:</label>
@@ -63,12 +62,11 @@
                 <input type="text" id="inComodos" name="comodos" required><br><br>
             </div>
             <div>
-                <label for="sltNegociacao">Tipo de Negociação:</label>
-                <select name="negociacao" id="sltNegociacao" required>
-                    <option value="" disabled selected>Selecione o tipo de negociação</option>
-                    <option value="venda">Venda</option>
-                    <option value="aluguel">Aluguel</option>
-                </select>
+               <span>Cidade:</span>
+                <input type="radio" id="st" name="cidade" value="st" required>
+                <label for="st">Santa Teresa</label>
+                <input type="radio" id="smj" name="cidade" value="smj">
+                <label for="smj">Santa Maria de Jetibá</label>
             </div>
             <div>
                 <label for="inIncluso">Incluso:</label>

@@ -25,6 +25,7 @@ function cadastrar(event) {
         telefone: inTelefone.value,
         nascimento: inNascimento.value,
         senha: inSenha.value,
+        
     };
     let saida = "";
     if (inNome.value == "" || inCpf.value == "" || inEmail.value == "" || inTelefone.value == "" || inNascimento.value == "" || inSenha.value == "") {
