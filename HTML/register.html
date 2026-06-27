@@ -51,11 +51,12 @@
                 <p>Preencha o formulário a seguir e realize seu cadastro em instantes</p>
             </article>
 
-            <form action="login.html">
+            <form action="#">
+                <p id="outSaida"></p>
                 <fieldset class="personalData">
                     <legend>Dados Pessoais</legend>
                     <div>
-                        <label for="nome">Nome:</label>
+                        <label for="nome">Nome completo:</label>
                         <input id="inNome" type="text" placeholder="Digite seu nome" required name="nome"
                             oninvalid="this.setCustomValidity('Por favor, Informe seu nome completo.')"
                             oninput="this.setCustomValidity('')" minlength="5">
@@ -93,9 +94,11 @@
                     </div>
                     <p class="genero">
                         <span>Gênero:</span>
-                            <input type="radio" name="genero" id="masculino" value="Masculino" required name="genero">
+                            <input type="radio" name="genero" id="naodefinido" value="naoDefinido" checked disabled required>
+                            <label for="masculino">Selecione um gênero</label>
+                            <input type="radio" name="genero" id="masculino" value="Masculino" required>
                             <label for="masculino">Masculino</label>
-                            <input type="radio" name="genero" id="feminino" value="Feminino" required name="genero">
+                            <input type="radio" name="genero" id="feminino" value="Feminino" required>
                             <label for="feminino">Feminino</label>
                     </p>
                 </fieldset>
@@ -118,7 +121,7 @@
                         <label for="termo3">Aceito receber comunicações sobre novidades e ofertas</label>
                     </div>
                 </fieldset>
-                <input type="submit" value="Efetuar Cadastro">
+                <input type="submit" id="btnCadastrar" value="Efetuar Cadastro">
                 <a href="login.html">Já tenho a conta Beling</a>
             </form>
         </section>
