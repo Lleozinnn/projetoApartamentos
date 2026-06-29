@@ -8,7 +8,6 @@ const btCadastrar = document.getElementById("btCadastrar");
 const outSaida = document.getElementById("outSaida");
 const btDeletar = document.getElementById("btdeletar");
 const btEditar = document.getElementById("btEditar");
-
 btCadastrar.addEventListener("click", (event) => cadastrar(event));
 btDeletar.addEventListener("click", (event) => deletar(event));
 btEditar.addEventListener("click", (event) => editar(event));

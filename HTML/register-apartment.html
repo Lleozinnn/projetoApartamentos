@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estiloGlobal.css">
+    <link rel="stylesheet" href="../css/register-apartment.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Cadastro de Apartamento</title>
-    <!-- <link rel="stylesheet" href="../css/estiloGlobal.css"> -->
 </head>
 
 <body>
@@ -39,9 +42,8 @@
         </div>
     </header>
     <main>
-        
-        <h1>Cadastro de Apartamento</h1>
-        <form action="#" method="post">
+        <form>
+            <h1>Cadastro de Apartamento</h1>
             <div>
                 <label for="inNumero">Número do apartamento:</label>
                 <input type="text" id="inNumero" name="numero" required>
@@ -49,10 +51,12 @@
 
             <div>
                 <span>Tipo de Negociação:</span>
-                <input type="radio" id="venda" name="negociacao" value="venda" required>
-                <label for="venda">Venda</label>
-                <input type="radio" id="aluguel" name="negociacao" value="aluguel" required>
-                <label for="aluguel">Aluguel</label>
+                <div>
+                    <input type="radio" id="venda" name="negociacao" value="venda" required>
+                    <label for="venda">Venda</label>
+                    <input type="radio" id="aluguel" name="negociacao" value="aluguel" required>
+                    <label for="aluguel">Aluguel</label>
+                </div>
             </div>
             <div>
                 <label for="inPreco">Preço:</label>
@@ -63,23 +67,26 @@
                 <input type="text" id="inComodos" name="comodos" required><br><br>
             </div>
             <div>
-               <span>Cidade:</span>
-                <input type="radio" id="st" name="cidade" value="Santa Teresa" required>
-                <label for="st">Santa Teresa</label>
-                <input type="radio" id="smj" name="cidade" value="Santa Maria de Jetibá">
-                <label for="smj">Santa Maria de Jetibá</label>
+                <span>Cidade:</span>
+                <div>
+                    <input type="radio" id="st" name="cidade" value="Santa Teresa" required>
+                    <label for="st">Santa Teresa</label>
+                    <input type="radio" id="smj" name="cidade" value="Santa Maria de Jetibá">
+                    <label for="smj">Santa Maria de Jetibá</label>  
+                </div>
             </div>
             <div>
                 <label for="inIncluso">Incluso:</label>
                 <input type="text" id="inIncluso" name="incluso" required>
             </div>
-
-            <input type="submit" id="btCadastrar" value="Cadastrar">
-            <button id="btdeletar">Deletar Apartamento</button>
-            <button id="btEditar">Editar Apartemnto</button>
-
+            <div class="btns">
+                <button id="btCadastrar">Cadastrar</button>
+                <button id="btdeletar">Deletar Apartamento</button>
+                <button id="btEditar">Editar Apartemnto</button>
+            </div>
             <p id="outSaida"></p>
         </form>
+        
     </main>
     <footer>
         <img src="../assets/logo.png" alt="Logo Beling apartamentos">
@@ -118,6 +125,9 @@
         </section>
         <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="../js/register-apartment.js"></script>
 </body>
 
