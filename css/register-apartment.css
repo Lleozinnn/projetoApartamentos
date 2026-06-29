@@ -1,10 +1,5 @@
 main {
     min-height: 100vh;
-<<<<<<< HEAD
-}
-h1 {
-    padding-top: 150px;
-=======
     display: grid;
     grid-template-rows: 150px auto 30px;
     grid-template-columns: 30px auto 30px;
@@ -57,5 +52,4 @@ input {
     margin-top: 20px;
     border-radius: 10px;
     background-color: yellow;
->>>>>>> beff02de2fc4c650c5a3059082c2ac26f9a30399
 }
