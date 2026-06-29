@@ -53,7 +53,6 @@ function criarCard (ap){
             </p>
             <p>
                 <strong>Incluso: ${ap.incluso}</strong><br>
-                
             </p>
             <p>
                 <strong>Situação:</strong>
@@ -69,8 +68,8 @@ function criarCard (ap){
  
 // Função para criar os cards dos apartamentos.
 function exibirAp(apartamentos){
-    for(let ind=0; apartamentos.length > ind; ind++){
-        let ap =apartamentos[ind];
+    for(let ind = 0; apartamentos.length > ind; ind++){
+        let ap = apartamentos[ind];
         outAp.innerHTML += criarCard(ap);
     }
 }

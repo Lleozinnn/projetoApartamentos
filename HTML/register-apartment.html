@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estiloGlobal.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <title>Entrar na conta Pinnacle</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Cadastro de Apartamento</title>
+    <!-- <link rel="stylesheet" href="../css/estiloGlobal.css"> -->
 </head>
 
 <body>
     <header>
-        <img src="../../assets/logo.png" alt="Logotipo Pinnacle Apartamentos">
+        <img src="../../assets/logo.png" alt="Logotipo Beling Apartamentos">
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
@@ -42,35 +39,47 @@
         </div>
     </header>
     <main>
-        <video src="../assets/videos/video_login.mp4" autoplay muted loop></video>
-        <section>
-            <img src="../assets/pictures/foto-login.jpg" alt="">
-            <article>
-                <h1>Log-in</h1>
-                <p>Entre com sua conta Pinnacle para prosseguir com a locação</p>
-            </article>
+        <h1>Cadastro de Apartamento</h1>
+        <form action="#" method="post">
+            <div>
+                <label for="inNumero">Número do apartamento:</label>
+                <input type="text" id="inNumero" name="numero" required>
+            </div>
 
-            <form action="rental.html">
-                <div>
-                    <label for="cpf">CPF:</label>
-                    <input type="tel" placeholder="Informe o CPF" required pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
-                        oninvalid="this.setCustomValidity('Por favor, informe seu CPF no padrão correto com pontos e hífen.')"
-                        oninput="this.setCustomValidity('')" name="cpf" id="inCpf">
-                </div>
-                <div>
-                    <label for="senha">Senha:</label>
-                    <input type="password" placeholder="Informe sua senha Pinnacle" required
-                        oninvalid="this.setCustomValidity('Por favor, informe sua senha.')"
-                        oninput="this.setCustomValidity('')" name="senha" id="inSenha">
-                </div>
-                <input type="submit" value="Entrar">
-                <a href="register.html">Não possuo a conta Pinnacle</a>
-            </form>
-        </section>
+            <div>
+                <span>Tipo de Negociação:</span>
+                <input type="radio" id="venda" name="negociacao" value="venda" required>
+                <label for="venda">Venda</label>
+                <input type="radio" id="aluguel" name="negociacao" value="aluguel" required>
+                <label for="aluguel">Aluguel</label>
+            </div>
+            <div>
+                <label for="inPreco">Preço:</label>
+                <input type="number" id="inPreco" name="preco" required><br><br>
+            </div>
+            <div>
+                <label for="inComodos">Cômodos:</label>
+                <input type="text" id="inComodos" name="comodos" required><br><br>
+            </div>
+            <div>
+               <span>Cidade:</span>
+                <input type="radio" id="st" name="cidade" value="st" required>
+                <label for="st">Santa Teresa</label>
+                <input type="radio" id="smj" name="cidade" value="smj">
+                <label for="smj">Santa Maria de Jetibá</label>
+            </div>
+            <div>
+                <label for="inIncluso">Incluso:</label>
+                <input type="text" id="inIncluso" name="incluso" required>
+            </div>
 
+            <input type="submit" id="btnCadastrar" value="Cadastrar">
+
+            <p id="outSaida"></p>
+        </form>
     </main>
     <footer>
-        <img src="../assets/logo.png" alt="Logo Pinnacle apartamentos">
+        <img src="../assets/logo.png" alt="Logo Beling apartamentos">
         <section id="content">
             <article class="redes">
                 <h3>Nos sigam em nossas redes sociais</h3>
@@ -88,7 +97,8 @@
                 </div>
                 <div>
                     <img src="../assets/icons/github.svg" alt="GitHub">
-                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a href="https://github.com/Lleozinnn">Leonardo Pinnacle</a></p>
+                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a
+                            href="https://github.com/Lleozinnn">Leonardo Beling</a></p>
                 </div>
             </article>
             <article class="contato">
@@ -105,10 +115,7 @@
         </section>
         <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
-    <script src="../js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="../js/register-apartment.js"></script>
 </body>
 
 </html>
