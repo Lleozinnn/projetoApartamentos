@@ -39,6 +39,7 @@
         </div>
     </header>
     <main>
+        
         <h1>Cadastro de Apartamento</h1>
         <form action="#" method="post">
             <div>
@@ -63,9 +64,9 @@
             </div>
             <div>
                <span>Cidade:</span>
-                <input type="radio" id="st" name="cidade" value="st" required>
+                <input type="radio" id="st" name="cidade" value="Santa Teresa" required>
                 <label for="st">Santa Teresa</label>
-                <input type="radio" id="smj" name="cidade" value="smj">
+                <input type="radio" id="smj" name="cidade" value="Santa Maria de Jetibá">
                 <label for="smj">Santa Maria de Jetibá</label>
             </div>
             <div>
@@ -73,7 +74,9 @@
                 <input type="text" id="inIncluso" name="incluso" required>
             </div>
 
-            <input type="submit" id="btnCadastrar" value="Cadastrar">
+            <input type="submit" id="btCadastrar" value="Cadastrar">
+            <button id="btdeletar">Deletar Apartamento</button>
+            <button id="btEditar">Editar Apartemnto</button>
 
             <p id="outSaida"></p>
         </form>
