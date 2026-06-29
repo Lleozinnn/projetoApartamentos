@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estiloGlobal.css">
     <link rel="stylesheet" href="../css/index.css">
-    <title>Beling Apartamentos</title>
+    <title>Pinnacle Apartamentos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        <img src="../../assets/logo.png" alt="Logotipo Beling Apartamentos">
+        <img src="../../assets/logo.png" alt="Logotipo Pinnacle Apartamentos">
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
@@ -23,7 +24,18 @@
                 <a href="login.html"><button>Login</button></a>
             </ul>
         </nav>
-        <img src="../../assets/icons/menu.svg" alt="Menu" class="menu">
+        <div class="nav-item dropdown menu">
+            <img src="../assets/icons/menu.svg" alt="Seções" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">Início</a></li>
+            <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
+            <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
+            <li><a class="dropdown-item" href="about.html">Sobre</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
+            <li><a class="dropdown-item" href="login.html">Login</a></li>
+          </ul>
+        </div>
     </header>
     <main>
         <section id="hero">
@@ -32,11 +44,19 @@
                 <p>Insira as informações e buscaremos as melhores opções para você.</p>
             </article>
             <form action="rental.html" method="get">
-                <select name="localidade" id="localidade">
+                <select name="localidade" id="localidade" required>
+                    <option value="" disabled selected>Escolha o Local</option>
                     <option value="Santa Teresa">Santa Teresa</option>
-                    <option value="Santa Maria de Jetibá" selected>Santa Maria de Jetibá</option>
+                    <option value="Santa Maria de Jetibá">Santa Maria de Jetibá</option>
                 </select>
-                <input type="text" placeholder="Descreva o apartamento" name="descricao">
+                <select name="negociacao" id="sltNegociacao" required>
+                    <option value="" disabled selected>Escolha a Negociação</option>
+                    <option value="venda">Comprar</option>
+                    <option value="aluguel">Alugar</option>
+                </select>
+                <select name="preco" id="sltPreco" required>
+                    <option value="" disabled selected>Selecione a Negociação</option>
+                </select>
                 <input type="submit" value="Buscar">
             </form>
             <a href="#beneficios">
@@ -47,7 +67,7 @@
 
         <!-- Benefícios -->
         <section id="beneficios">
-            <h2>Por que escolher a Beling?</h2>
+            <h2>Por que escolher a Pinnacle?</h2>
             <div>
                 <article>
                     <img src="../assets/pictures/card1.jpg"
@@ -78,7 +98,7 @@
 
         <!-- Sobre -->
         <section id="sobre">
-            <h2>Sobre a Beling</h2>
+            <h2>Sobre a Pinnacle</h2>
             <div>
                 <article>
                     <h3>Excelência</h3>
@@ -153,53 +173,57 @@
             <form action="#">
                 <div>
                     <label for="inNome">Nome</label>
-                    <input type="text" name="nome" id="inNome" placeholder="Como você se chama?" required>
+                    <input type="text" name="nome" id="inNome" placeholder="Como você se chama?" required
+                    >
                 </div>
                 <div>
                     <label for="inEmail">E-mail</label>
-                    <input type="email" name="email" id="inEmail" placeholder="Por onde nos falamos?">
+                    <input type="email" name="email" id="inEmail" placeholder="Por onde nos falamos?" required>
                 </div>
                 <input type="submit" value="Pronto!">
             </form>
         </section>
     </main>
     <footer>
-        <img src="../assets/logo.png" alt="Logo Beling apartamentos">
+        <img src="../assets/logo.png" alt="Logo Pinnacle apartamentos">
         <section id="content">
             <article class="redes">
                 <h3>Nos sigam em nossas redes sociais</h3>
                 <div>
-                    <img src="../assets/facebook.svg" alt="Facebook">
-                    <p>Beling Apartamentos</p>
+                    <img src="../assets/icons/facebook.svg" alt="Facebook">
+                    <p>Pinnacle Apartamentos</p>
                 </div>
                 <div>
-                    <img src="../assets/youtube.svg" alt="Youtube">
-                    <p>@BelingApartamentos</p>
+                    <img src="../assets/icons/youtube.svg" alt="Youtube">
+                    <p>@Pinnacle</p>
                 </div>
                 <div>
-                    <img src="../assets/instagram.svg" alt="Instagram">
-                    <p>@BelingApartamentos</p>
+                    <img src="../assets/icons/instagram.svg" alt="Instagram">
+                    <p>@Pinnacle</p>
                 </div>
                 <div>
-                    <img src="../assets/github.svg" alt="GitHub">
-                    <p>Lleozinnn</p>
+                    <img src="../assets/icons/github.svg" alt="GitHub">
+                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a href="https://github.com/Lleozinnn">Leonardo Pinnacle</a></p>
                 </div>
             </article>
             <article class="contato">
                 <h3>Contate-nos</h3>
                 <div>
-                    <img src="../assets/phone-call.svg" alt="Telefone">
+                    <img src="../assets/icons/phone-call.svg" alt="Telefone">
                     <p>(27) 4002 - 8922</p>
                 </div>
                 <div>
-                    <img src="../assets/mail.svg" alt="E-mail">
-                    <p>contato@beling.com</p>
+                    <img src="../assets/icons/mail.svg" alt="E-mail">
+                    <p>contato@pinnacle.com</p>
                 </div>
             </article>
         </section>
-        <p>© 2026 Beling Apartamentos. Todos os direitos reservados.</p>
+        <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
     <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -1,3 +1,11 @@
+const sltNegociacao = document.getElementById("sltNegociacao");
+const sltPreco = document.getElementById("sltPreco");
+
+sltNegociacao.addEventListener("change", () => {
+  console.log(sltNegociacao.value);
+  faixaPreco(sltNegociacao.value)
+});
+
 // Lista de objeto com 20 apartamentos. Insere no localStorage, assim que a página index é carregada sob algumas condições
 const vetApartamentos = [
   {
@@ -6,7 +14,8 @@ const vetApartamentos = [
     "valor": 100000,
     "comodos": "1 sala, 3 quartos, 2 banheiros, 1 varanda, 1 cozinha, 1 área de serviço",
     "incluso": "Água, Luz, Internet",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 2,
@@ -14,7 +23,8 @@ const vetApartamentos = [
     "valor": 1500,
     "comodos": "1 sala, 1 quarto, 1 banheiro, 1 cozinha",
     "incluso": "Condomínio, Internet",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 3,
@@ -22,7 +32,8 @@ const vetApartamentos = [
     "valor": 250000,
     "comodos": "1 sala, 2 quartos, 2 banheiros, 1 cozinha, 1 área de serviço",
     "incluso": "Gás encanado",
-    "situacao": "reservado"
+    "situacao": "reservado",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 4,
@@ -30,7 +41,8 @@ const vetApartamentos = [
     "valor": 2200,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 varanda, 1 cozinha",
     "incluso": "Água, Internet",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 5,
@@ -38,7 +50,8 @@ const vetApartamentos = [
     "valor": 450000,
     "comodos": "1 sala ampla, 3 quartos (1 suíte), 3 banheiros, 1 varanda gourmet, 1 cozinha",
     "incluso": "Segurança 24h, Academia",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 6,
@@ -46,7 +59,8 @@ const vetApartamentos = [
     "valor": 1200,
     "comodos": "1 quarto/sala, 1 banheiro, 1 cozinha americana",
     "incluso": "Água, Luz",
-    "situacao": "indisponivel"
+    "situacao": "indisponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 7,
@@ -54,7 +68,8 @@ const vetApartamentos = [
     "valor": 180000,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Nenhum",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 8,
@@ -62,7 +77,8 @@ const vetApartamentos = [
     "valor": 3100,
     "comodos": "1 sala, 3 quartos, 2 banheiros, 1 vaga de garagem, 1 cozinha",
     "incluso": "Condomínio, IPTU, Água",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 9,
@@ -70,7 +86,8 @@ const vetApartamentos = [
     "valor": 320000,
     "comodos": "1 sala, 2 quartos (1 suíte), 2 banheiros, 1 cozinha, 1 área de serviço",
     "incluso": "Internet, Gás",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 10,
@@ -78,7 +95,8 @@ const vetApartamentos = [
     "valor": 1800,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Luz, Internet",
-    "situacao": "reservado"
+    "situacao": "reservado",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 11,
@@ -86,7 +104,8 @@ const vetApartamentos = [
     "valor": 600000,
     "comodos": "2 salas, 4 quartos (2 suítes), 4 banheiros, 2 varandas, 1 cozinha planejada",
     "incluso": "Condomínio, Área de Lazer",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 12,
@@ -94,7 +113,8 @@ const vetApartamentos = [
     "valor": 2500,
     "comodos": "1 sala, 2 quartos, 2 banheiros, 1 varanda, 1 cozinha",
     "incluso": "Água, Gás",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 13,
@@ -102,7 +122,8 @@ const vetApartamentos = [
     "valor": 135000,
     "comodos": "1 sala, 1 quarto, 1 banheiro, 1 cozinha",
     "incluso": "Nenhum",
-    "situacao": "indisponivel"
+    "situacao": "indisponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 14,
@@ -110,7 +131,8 @@ const vetApartamentos = [
     "valor": 950,
     "comodos": "1 quarto, 1 banheiro, 1 cozinha pequena",
     "incluso": "Internet",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 15,
@@ -118,7 +140,8 @@ const vetApartamentos = [
     "valor": 210000,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha, 1 vaga de garagem",
     "incluso": "Água",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 16,
@@ -126,7 +149,8 @@ const vetApartamentos = [
     "valor": 4000,
     "comodos": "1 sala ampla, 3 quartos (2 suítes), 3 banheiros, 1 varanda, 1 cozinha",
     "incluso": "Todos os serviços do condomínio",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 17,
@@ -134,7 +158,8 @@ const vetApartamentos = [
     "valor": 850000,
     "comodos": "1 sala de estar, 1 sala de jantar, 4 quartos (3 suítes), 5 banheiros, Cozinha, DCE",
     "incluso": "Portaria 24h, Limpeza",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 18,
@@ -142,7 +167,8 @@ const vetApartamentos = [
     "valor": 1650,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Condomínio, Gás",
-    "situacao": "reservado"
+    "situacao": "reservado",
+    "cidade": "Santa Maria de Jetibá"
   },
   {
     "numero": 19,
@@ -150,7 +176,8 @@ const vetApartamentos = [
     "valor": 115000,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Nenhum",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Teresa"
   },
   {
     "numero": 20,
@@ -158,7 +185,8 @@ const vetApartamentos = [
     "valor": 5500,
     "comodos": "1 sala integrada, 2 suítes, 2 banheiros, 1 varanda estendida, Cozinha gourmet",
     "incluso": "Internet Fibra, Limpeza Semanal",
-    "situacao": "disponivel"
+    "situacao": "disponivel",
+    "cidade": "Santa Maria de Jetibá"
   }
 ];
 
@@ -169,3 +197,25 @@ console.log(apartamentos)
 if (!apartamentos) {
     localStorage.setItem("vetApartamentos",JSON.stringify(vetApartamentos));
 }
+
+// Definindo faixa de preco de acordo com a modalidade de negociacão escolhida.
+function faixaPreco (negociacao){
+  sltPreco.innerHTML = `<option value="" disabled selected>Escolha o Preço</option>`;
+  if(negociacao == 'aluguel'){
+    // Min 950 Max 5500
+    for(let ind = 950; ind < 5500; ind += 500){
+      let max = ind + 500;
+      let opt = `<option value="${ind}-${max}">${ind} - ${max}</option>`;
+      sltPreco.innerHTML += opt;
+    }
+  }else{
+    // Min 100.000 Max 850.000
+    for(let ind = 100000; ind < 850000; ind += 50000){
+      let max = ind + 50000;
+      let opt = `<option value="${ind}-${max}">${ind} - ${max}</option>`;
+      sltPreco.innerHTML += opt;
+    }
+  }
+}
+
+
