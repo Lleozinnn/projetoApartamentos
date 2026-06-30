@@ -67,6 +67,7 @@ nav {
 nav ul {
     display: flex;
     margin-bottom: 0;
+    
 }
 nav ul button {
     margin-right: 10px;

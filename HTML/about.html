@@ -1,92 +1,111 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/estiloGlobal.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/about.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/estiloGlobal.css">
+
+    <title>Sobre</title>
 </head>
+
 <body>
     <header>
         <img src="../../assets/logo.png" alt="Logotipo Beling Apartamentos">
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
-                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="about.html"><button>Sobre</button></a>
                 <a href="contact.html"><button>Contatos</button></a>
             </ul>
             <ul>
                 <a href="register.html"><button>Cadastro</button></a>
                 <a href="login.html"><button>Login</button></a>
+                <a href="apartment.html"><button>Restrito</button></a>
             </ul>
         </nav>
-        <img src="../../assets/icons/menu.svg" alt="Menu" class="menu">
+        <div class="nav-item dropdown menu">
+            <img src="../assets/icons/menu.svg" alt="Seções" class="nav-link dropdown-toggle" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Início</a></li>
+                
+                <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
+                <li><a class="dropdown-item" href="about.html">Sobre</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rental.html?preco=todos">Área restrita</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main aria-label="Informações sobre a empresa Beling Apartamentos">
+    <main>
 
-    <section class="sobre">
-        <h1>Sobre Nós</h1>
+        <section class="sobre">
+            <h1>Sobre Nós</h1>
 
-        <div class="card" aria-labelledby="missao">
-            <h2 id="missao">Missão</h2>
-            <p>
-                Oferecer aos clientes as melhores opções de apartamentos,
-                conectando conforto, qualidade e praticidade para transformar
-                a busca pelo imóvel ideal em uma experiência simples e segura.
-            </p>
-        </div>
+            <article class="card">
+                <h2 id="missao">Missão</h2>
+                <p>
+                    Oferecer aos clientes as melhores opções de apartamentos,
+                    conectando conforto, qualidade e praticidade para transformar
+                    a busca pelo imóvel ideal em uma experiência simples e segura.
+                </p>
+            </article>
 
-        <div class="card" aria-labelledby="visao">
-            <h2 id="visao">Visão</h2>
-            <p>
-                Ser referência no mercado imobiliário, reconhecida pela confiança,
-                inovação e excelência na apresentação de apartamentos que atendam
-                às necessidades e sonhos de cada cliente.
-            </p>
-        </div>
+            <article class="card">
+                <h2 id="visao">Visão</h2>
+                <p>
+                    Ser referência no mercado imobiliário, reconhecida pela confiança,
+                    inovação e excelência na apresentação de apartamentos que atendam
+                    às necessidades e sonhos de cada cliente.
+                </p>
+            </article>
 
-        <div class="card" aria-labelledby="valores">
-            <h2 id="valores">Valores</h2>
-            <ul>
-                <li>Transparência em todas as negociações</li>
-                <li>Compromisso com a satisfação do cliente</li>
-                <li>Ética e responsabilidade</li>
-                <li>Qualidade e excelência no atendimento</li>
-                <li>Inovação e praticidade</li>
-                <li>Confiança e credibilidade</li>
-            </ul>
-        </div>
+            <article class="card">
+                <h2 id="valores">Valores</h2>
+                <ul>
+                    <li>Transparência em todas as negociações</li>
+                    <li>Compromisso com a satisfação do cliente</li>
+                    <li>Ética e responsabilidade</li>
+                    <li>Qualidade e excelência no atendimento</li>
+                    <li>Inovação e praticidade</li>
+                    <li>Confiança e credibilidade</li>
+                </ul>
+            </article>
 
-        <div class="card" aria-labelledby="projeto">
-            <h2 id="projeto">Sobre o Projeto</h2>
+            <article class="card">
+                <h2 id="projeto">Sobre o Projeto</h2>
+                <p>
+                    O site Apartamentos Pinnacle foi criado para facilitar a escolha
+                    do apartamento ideal e ajudar usuários na busca por imóveis.
+                </p>
+                <p>
+                    O projeto foi desenvolvido considerando a dificuldade de busca
+                    por apartamentos disponíveis para venda nas regiões de
+                    Santa Teresa e Santa Maria de Jetibá, no Espírito Santo.
+                </p>
+            </article>
 
-            <p>
-                O site Beling Apartamentos foi criado para facilitar a escolha
-                do apartamento ideal e ajudar usuários na busca por imóveis.
-            </p>
+            <article class="card">
+                <h2 id="equipe">Membros do Grupo</h2>
+                <ul>
+                    <li>Fernando Gramelick</li>
+                    <li>Gabriel Westfal</li>
+                    <li>Leonardo Silva</li>
+                </ul>
+            </article>
 
-            <p>
-                O projeto foi desenvolvido considerando a dificuldade de busca
-                por apartamentos disponíveis para venda nas regiões de
-                Santa Teresa e Santa Maria de Jetibá, no Espírito Santo.
-            </p>
-        </div>
+        </section>
 
-        <div class="card" aria-labelledby="equipe">
-            <h2 id="equipe">Membros do Grupo</h2>
-
-            <ul>
-                <li>Fernando Gramelick</li>
-                <li>Gabriel Westfal</li>
-                <li>Leonardo Silva</li>
-            </ul>
-        </div>
-
-    </section>
-
-</main>
+    </main>
 
     <footer>
         <img src="../assets/logo.png" alt="Logo Beling apartamentos">
@@ -124,5 +143,9 @@
         </section>
         <p>© 2026 Beling Apartamentos. Todos os direitos reservados.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
