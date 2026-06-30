@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+
+:root {
+    /* Cores de Marca (Baseadas no Logo) */
+    --brand-primary: #2d5a27;
+    /* Verde assinatura profundo (sofisticado) */
+    --brand-secondary: #c2a649;
+    /* Dourado/Bege elegante para destaques */
+    --brand-light: #f4f6f0;
+    /* Off-white esverdeado muito claro (fundos principais) */
+
+    /* Fundos Alternativos (Para criar ritmo visual entre as seções de 100vh) */
+    --bg-dark: #1b3318;
+    /* Verde ultra-escuro para seções de grande impacto */
+    --bg-card: #ffffff;
+    /* Branco puro para destacar os cards do fundo */
+
+    /* Cores de Texto */
+    --text-main: #1c2b19;
+    /* Verde quase preto para máxima legibilidade */
+    --text-muted: #556b52;
+    /* Verde acinzentado para parágrafos e subtítulos */
+    --text-light: #ffffff;
+    /* Texto branco para fundos escuros */
+
+    /* Elementos Interativos e Bordas */
+    --border-color: #e2e8e0;
+    /* Linhas e bordas sutis */
+    --cta-hover: #22451d;
+    /* Variação do verde para estados de hover */
+}
+
+main {
+    min-height: 100vh;
+    display: grid;
+    position: relative;
+    z-index: 0;
+    grid-template-columns: minmax(30px, auto) 1fr minmax(30px, auto);
+    grid-template-rows: 150px 1fr 150px;
+}
+
+video {
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+    filter: blur(5px);
+    height: 100%;
+    width: 100%;
+}
+
+main section {
+    box-shadow: -2px -2px 40px 5px black;
+    z-index: 2;
+    align-self: center;
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-row: 2;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    max-width: 1100px;
+}
+
+main section img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    grid-row: span 2;
+    grid-column: 1;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+}
+
+main section article {
+    grid-row: 1;
+    grid-column: 2;
+    padding: 20px;
+    text-align: center;
+}
+
+main section form {
+    grid-row: 2;
+    grid-column: 2;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 100%;
+    gap: 20px;
+}
+
+.personalData {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border: 2px solid var(--brand-primary);
+    border-radius: 20px;
+}
+form fieldset {
+    padding: 20px;
+}
+.personalData div {
+    display: grid;
+}
+
+.personalData div input {
+    font-size: 1.2em;
+    border: 1px solid var(--brand-primary);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.personalData div label {
+    font-size: 0.9em;
+}
+
+.rdbutton {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.rdbutton input {
+    margin-left: 15px;
+}
+
+.termos {
+    display: grid;
+    border: 1px solid var(--brand-primary);
+    border-radius: 20px;
+}
+
+p,
+a,
+label,
+legend {
+    color: var(--text-muted)
+}
+
+legend {
+    float: none;
+    width: auto;
+    font-weight: 500;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+form button {
+    border: 2px solid var(--border-color);
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    border-radius: 15px;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+h1 {
+    color: var(--text-main);
+    margin: 0;
+    margin-top: 10px;
+    font-size: 3em;
+}
+
+a {
+    text-decoration: none;
+    align-self: center;
+    justify-self: end;
+}
+#outSaida {
+    text-align: center;
+    color: var(--text-light);
+    background-color: #c2a649;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .personalData {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1150px) {
+    main section img {
+        display: none;
+    }
+    main section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
