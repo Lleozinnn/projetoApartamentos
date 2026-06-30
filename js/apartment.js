@@ -1,7 +1,7 @@
 // Verificação de login 
-let sessao = JSON.parse(sessionStorage.getItem("sessao"))
+let sessao = JSON.parse(sessionStorage.getItem("sessao"));
 if (!sessao || sessao.nivel == "user") {
-    window.location.href = "rental.html"
+    window.location.href = "rental.html";
 }
 
 
@@ -25,7 +25,7 @@ btLimpar.addEventListener("click", (event) => {
     event.preventDefault();
     limpar(event);
 });
-btSair.addEventListener("click", deslogar)
+btSair.addEventListener("click", deslogar);
 function cadastrar(event) {
     event.preventDefault();
     let cadastroAp = {
@@ -33,9 +33,11 @@ function cadastrar(event) {
         valor: Number(inPreco.value),
         comodos: inComodos.value,
         incluso: inIncluso.value,
-        negociacao: rdNegociacao.value,
-        cidade: rdCidade.value,
-    }
+        negociacao: rdNegociacao[0].checked ? rdNegociacao[0].value : rdNegociacao[1].value,
+        cidade: rdCidade[0].checked ? rdCidade[0].value : rdCidade[1].value,
+        situacao : "disponivel"
+    };
+    console.log(cadastroAp);
     if (inNumero.value == "" || inPreco.value == "" || inComodos.value == "" || inIncluso.value == "") {
         if (inNumero.value == "") {
             inNumero.focus();
@@ -74,7 +76,7 @@ function cadastrar(event) {
 function deletar(event) {
     event.preventDefault();
     // ferificaçoes se o numero do apartamento no qual o usuario quer deletar foi preenchido corretamente
-    let numero = Number(inNumero.value)
+    let numero = Number(inNumero.value);
     if (inNumero.value == "") {
         outSaida.innerHTML = "Para deletar um apartamento é necessario informar o numero do apartamento."
     } else {
@@ -88,10 +90,10 @@ function deletar(event) {
         }
         console.log(vetApartamentos);
         if (flag) {
-            outSaida.innerHTML = `O apartamento numero ${numero} não foi encontrado`
+            outSaida.innerHTML = `O apartamento numero ${numero} não foi encontrado`;
             inNumero.focus();
         } else {
-            outSaida.innerHTML = `O apartemento numero ${numero} foi deletado com sucesso!`
+            outSaida.innerHTML = `O apartemento numero ${numero} foi deletado com sucesso!`;
             localStorage.setItem("vetApartamentos", JSON.stringify(vetApartamentos));
         }
     }
@@ -100,21 +102,21 @@ function deletar(event) {
 function editar(event) {
     event.preventDefault();
     let vetApartamentos = JSON.parse(localStorage.getItem("vetApartamentos"));
-    let numero = Number(inNumero.value)
+    let numero = Number(inNumero.value);
     if (inNumero.value == "") {
-        outSaida.innerHTML = "Para editar um apartamento é necessario informar o numero do apartamento"
+        outSaida.innerHTML = "Para editar um apartamento é necessario informar o numero do apartamento";
         inNumero.focus();
     } else {
         let flag = true;
         let ap;
         for (let ind = 0; ind < vetApartamentos.length; ind++) {
             if (vetApartamentos[ind].numero == numero) {
-                ap = vetApartamentos[ind]
+                ap = vetApartamentos[ind];
                 flag = false;
             }
         }
         if (flag) {
-            outSaida.innerHTML = `O apartamento numero ${numero} não foi encontrado!`
+            outSaida.innerHTML = `O apartamento numero ${numero} não foi encontrado!`;
             inNumero.focus();
         } else {
             if (btEditar.innerHTML == "Editar Apartamento") {
@@ -129,7 +131,7 @@ function editar(event) {
                 btLimpar.disabled = true;
                 btCadastrar.disabled = true;
                 btDeletar.disabled = true;
-                btEditar.innerHTML = "Confirmar edição"
+                btEditar.innerHTML = "Confirmar edição";
             } else {
                 let edicao = {
                     numero: Number(inNumero.value),
@@ -138,14 +140,14 @@ function editar(event) {
                     incluso: inIncluso.value,
                     negociacao: rdNegociacao.value,
                     cidade: rdCidade.value,
-                }
+                };
                 for (let ind = 0; ind < vetApartamentos.length; ind++) {
                     if(vetApartamentos[ind].numero == numero){
                         vetApartamentos[ind] = edicao;
                     }
                 }
                 localStorage.setItem("vetApartamentos", JSON.stringify(vetApartamentos));
-                outSaida.innerHTML = `O apartamento numero ${numero} foi editado com sucesso!`
+                outSaida.innerHTML = `O apartamento numero ${numero} foi editado com sucesso!`;
                 btEditar.innerHTML ="Editar Apartamento";
                 inNumero.disabled = false;
                 btLimpar.disabled = false;

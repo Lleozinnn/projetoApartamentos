@@ -57,7 +57,7 @@ function cadastrar(event) {
     }
     else if (!cheTermo1.checked || !cheTermo2.checked) {
         cadastro.termos = false;
-        saida = "Aceite pelo menos, os dois primeiros termos para criar conta."
+        saida = "Aceite pelo menos, os dois primeiros termos para criar conta.";
     } else {
         cadastro.nivel = rdNivel[1].checked == true ? "user" : "admin";
         cadastro.genero = rdGenero[1].checked == true ? "Masculino" : "Feminino";
@@ -68,7 +68,7 @@ function cadastrar(event) {
 
             if (cadastroLs.cpf == inCpf.value) {
                 saida = `${cadastroLs.nome} já está ${cadastro.genero == "Masculino" ? "registrado" : "registrada"
-                    }!`
+                    }!`;
                 flag = false;
             }
         }
@@ -82,7 +82,6 @@ function cadastrar(event) {
                 } com sucesso`
             window.location.href = "login.html"
         }
-
     }
     outSaida.innerHTML = saida;
 }

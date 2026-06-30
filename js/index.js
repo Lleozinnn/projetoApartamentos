@@ -3,7 +3,7 @@ const sltPreco = document.getElementById("sltPreco");
 
 sltNegociacao.addEventListener("change", () => {
   console.log(sltNegociacao.value);
-  faixaPreco(sltNegociacao.value)
+  faixaPreco(sltNegociacao.value);
 });
 
 // Lista de objeto com 20 apartamentos. Insere no localStorage, assim que a página index é carregada sob algumas condições
@@ -193,7 +193,6 @@ const vetApartamentos = [
 let apartamentos = localStorage.getItem("vetApartamentos");
 // Verificação se o objeto apartamentos já está definido
 // Se não estiver, define-o.
-console.log(apartamentos)
 if (!apartamentos) {
     localStorage.setItem("vetApartamentos",JSON.stringify(vetApartamentos));
 }
