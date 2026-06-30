@@ -2,7 +2,6 @@ const sltNegociacao = document.getElementById("sltNegociacao");
 const sltPreco = document.getElementById("sltPreco");
 
 sltNegociacao.addEventListener("change", () => {
-  console.log(sltNegociacao.value);
   faixaPreco(sltNegociacao.value);
 });
 

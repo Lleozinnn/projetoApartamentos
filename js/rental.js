@@ -23,18 +23,20 @@ let vetApartamentos = JSON.parse(localStorage.getItem("vetApartamentos"));
 function filtrar (){
     let apEncontrado = [];
     let precoMax, precoMin;
-    let precoTratado = !preco && preco == "todos" ? [0,0] : preco.split("-");
-    let modoProcura = preco == "todos" ? "todos" : "preco";
+    let precoTratado = !preco || preco == "todos" ? "todos" : preco.split("-");
+    let modoProcura = precoTratado == "todos" ? "todos" : "preco";
     precoMin = precoTratado[0];
     precoMax = precoTratado[1];
     
     for(let ind = 0; ind < vetApartamentos.length; ind++){
         let ap = vetApartamentos[ind];
-        if(modoProcura == "preco" && ap.cidade == cidade && ap.valor <= precoMax && ap.valor >= precoMin && ap.situacao == "disponivel"){
+        if(modoProcura == "preco" && ap.negociacao == negociacao && ap.cidade == cidade && ap.valor <= precoMax && ap.valor >= precoMin && ap.situacao == "disponivel"){
             apEncontrado.push(ap);
-        } else if (modoProcura == "todos" && ap.situacao == "disponivel") {
+        } else if (modoProcura == "todos" && ap.situacao == "disponivel" && ap.negociacao == negociacao) {
             apEncontrado.push(ap);
-        } else {}
+        } else {
+            !negociacao ? apEncontrado.push(ap) : "";
+        }
     }
     apEncontrado.length == 0 ? outAp.innerHTML = "<p>Nenhum apartamento foi encontrado</p>" : "";
     return apEncontrado;
@@ -52,7 +54,7 @@ function criarCard (ap){
             <h2>Apartamento #${ap.numero}</h2>
             <p class="valor">R$ ${ap.valor.toFixed(2)}</p>
             <div class="infos">
-                <p><strong>Cidade:</strong>${ap.cidade}</p>
+                <p><strong>Cidade:</strong> ${ap.cidade}</p>
                 <p>
                     <strong>Cômodos: ${ap.comodos}</strong><br>
                 </p>
@@ -63,7 +65,7 @@ function criarCard (ap){
                     <strong>Situação:</strong>
                     <span class="status">${ap.situacao}</span>
                 </p>
-                <button class="btAlugar" data-id="${ap.numero}">Alugar este</button>
+                <button class="btAlugar" data-id="${ap.numero}" ${ap.situacao == "disponivel" ? "" : "disabled"} >${ap.situacao == "disponivel" ? "Negociar este!" : "Ooops! Indisponível. "}</button>
             </div>
         </div>
     </div>
@@ -83,7 +85,6 @@ function alugar(event) {
     let elemento = event.target;
     if(elemento.className == "btAlugar"){
         let numero = elemento.getAttribute("data-id");
-        console.log(numero);
         let vetAp = JSON.parse(localStorage.getItem("vetApartamentos"));
         let flag = true;
         for(let ind = 0; ind < vetAp.length && flag; ind++){
