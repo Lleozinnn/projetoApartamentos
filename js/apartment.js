@@ -19,7 +19,6 @@ const btLimpar = document.getElementById("btLimpar");
 const btSair = document.getElementById("btSair");
 const inDisponivel = document.getElementById("inDisponivel");
 const divDisponivel = document.getElementById("divDisponivel");
-console.log(inDisponivel.checked);
 btCadastrar.addEventListener("click", (event) => cadastrar(event));
 btDeletar.addEventListener("click", (event) => deletar(event));
 btEditar.addEventListener("click", (event) => editar(event));
@@ -41,7 +40,6 @@ function cadastrar(event) {
         cidade: rdCidade[0].checked ? rdCidade[0].value : rdCidade[1].value,
         situacao: "disponivel"
     };
-    console.log(cadastroAp);
     if (inNumero.value == "" || inPreco.value == "" || inComodos.value == "" || inIncluso.value == "") {
         if (inNumero.value == "") {
             inNumero.focus();
@@ -92,7 +90,6 @@ function deletar(event) {
                 flag = false;
             }
         }
-        console.log(vetApartamentos);
         if (flag) {
             outSaida.innerHTML = `O apartamento numero ${numero} não foi encontrado`;
             inNumero.focus();
@@ -132,6 +129,7 @@ function editar(event) {
                 //campos radio button 
                 ap.negociacao == "venda" ? rdNegociacao[0].checked = true : rdNegociacao[1].checked = true;
                 ap.cidade == "Santa Teresa" ? rdCidade[0].checked = true : rdCidade[1].checked = true;
+                ap.situacao == "indisponivel" ? inDisponivel.checked = false : inDisponivel.checked = true;
                 btLimpar.disabled = true;
                 btCadastrar.disabled = true;
                 btDeletar.disabled = true;
@@ -145,8 +143,7 @@ function editar(event) {
                     incluso: inIncluso.value,
                     negociacao: rdNegociacao[0].checked ? rdNegociacao[0].value : rdNegociacao[1].value,
                     cidade: rdCidade[0].checked ? rdCidade[0].value : rdCidade[1].value,
-                    situacao:inDisponivel.checked ? "disponivel" : "indisponivel",
- 
+                    situacao: inDisponivel.checked ? "disponivel" : "indisponivel",
                 };
                 inDisponivel.checked ? edicao.situacao = "disponivel" : "";
                 for (let ind = 0; ind < vetApartamentos.length; ind++) {
