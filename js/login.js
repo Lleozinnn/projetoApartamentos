@@ -15,7 +15,7 @@ function entrar(event) {
     event.preventDefault();
     let saida;
     if (inCpf.value == "" || inSenha.value == "") {
-        saida = "Preencha os dois campos"
+        saida = "Preencha os dois campos";
         inCpf.value == "" ? inCpf.focus() : inSenha.focus();
     } else {
         let flag = true
@@ -29,7 +29,7 @@ function entrar(event) {
                     window.location.href = cadastro.nivel == "user" ? "rental.html?preco=todos" : "apartment.html";
                 }
                 else {
-                    saida = "A senha informada está incorreta"
+                    saida = "A senha informada está incorreta";
                 }
             }
         }

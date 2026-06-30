@@ -5,7 +5,8 @@ if (!sessao) {
 // Referenciação de elementos
 const outAp = document.getElementById("outAp");
 const btSair = document.getElementById("btSair");
-btSair.addEventListener("click", deslogar)
+btSair.addEventListener("click", deslogar);
+outAp.addEventListener("click", (event) => alugar(event));
 // Receber dados da URL para definir as opçoes que se encaixam com o perfil do usuario.
 
 const params = new URLSearchParams(window.location.search);
@@ -22,7 +23,6 @@ let vetApartamentos = JSON.parse(localStorage.getItem("vetApartamentos"));
 function filtrar (){
     let apEncontrado = [];
     let precoMax, precoMin;
-    console.log(preco)
     let precoTratado = !preco && preco == "todos" ? [0,0] : preco.split("-");
     let modoProcura = preco == "todos" ? "todos" : "preco";
     precoMin = precoTratado[0];
@@ -63,7 +63,7 @@ function criarCard (ap){
                     <strong>Situação:</strong>
                     <span class="status">${ap.situacao}</span>
                 </p>
-                <button data-id="${ap.numero}">Alugar este</button>
+                <button class="btAlugar" data-id="${ap.numero}">Alugar este</button>
             </div>
         </div>
     </div>
@@ -78,9 +78,26 @@ function exibirAp(apartamentos){
         outAp.innerHTML += criarCard(ap);
     }
 }
-// Função para trocar o estado de um apartamento de disponivel para alugado
-function alugar(apartamento) {
+// Função para trocar o estado de um apartamento de disponivel para indisponivel
+function alugar(event) {
+    let elemento = event.target;
+    if(elemento.className == "btAlugar"){
+        let numero = elemento.getAttribute("data-id");
+        console.log(numero);
+        let vetAp = JSON.parse(localStorage.getItem("vetApartamentos"));
+        let flag = true;
+        for(let ind = 0; ind < vetAp.length && flag; ind++){
+            let ap = vetAp[ind];
+            if(ap.numero == numero){
+                ap.situacao = "indisponivel";
+                vetAp[ind] = ap;
+                flag = false;
+                localStorage.setItem("vetApartamentos",JSON.stringify(vetAp));
+            }
+        }
+        location.reload(); 
 
+    }
 }
 // Função para desfazer login do usuário
 function deslogar () {
