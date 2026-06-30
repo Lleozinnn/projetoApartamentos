@@ -17,7 +17,9 @@ const btDeletar = document.getElementById("btdeletar");
 const btEditar = document.getElementById("btEditar");
 const btLimpar = document.getElementById("btLimpar");
 const btSair = document.getElementById("btSair");
-
+const inDisponivel = document.getElementById("inDisponivel");
+const divDisponivel = document.getElementById("divDisponivel");
+console.log(inDisponivel.checked);
 btCadastrar.addEventListener("click", (event) => cadastrar(event));
 btDeletar.addEventListener("click", (event) => deletar(event));
 btEditar.addEventListener("click", (event) => editar(event));
@@ -25,8 +27,10 @@ btLimpar.addEventListener("click", (event) => {
     event.preventDefault();
     limpar(event);
 });
+divDisponivel.style.display = "none";
 btSair.addEventListener("click", deslogar);
 function cadastrar(event) {
+
     event.preventDefault();
     let cadastroAp = {
         numero: Number(inNumero.value),
@@ -35,7 +39,7 @@ function cadastrar(event) {
         incluso: inIncluso.value,
         negociacao: rdNegociacao[0].checked ? rdNegociacao[0].value : rdNegociacao[1].value,
         cidade: rdCidade[0].checked ? rdCidade[0].value : rdCidade[1].value,
-        situacao : "disponivel"
+        situacao: "disponivel"
     };
     console.log(cadastroAp);
     if (inNumero.value == "" || inPreco.value == "" || inComodos.value == "" || inIncluso.value == "") {
@@ -131,6 +135,7 @@ function editar(event) {
                 btLimpar.disabled = true;
                 btCadastrar.disabled = true;
                 btDeletar.disabled = true;
+                divDisponivel.style.display = "block";
                 btEditar.innerHTML = "Confirmar edição";
             } else {
                 let edicao = {
@@ -138,27 +143,31 @@ function editar(event) {
                     valor: Number(inPreco.value),
                     comodos: inComodos.value,
                     incluso: inIncluso.value,
-                    negociacao: rdNegociacao.value,
-                    cidade: rdCidade.value,
+                    negociacao: rdNegociacao[0].checked ? rdNegociacao[0].value : rdNegociacao[1].value,
+                    cidade: rdCidade[0].checked ? rdCidade[0].value : rdCidade[1].value,
+                    situacao:inDisponivel.checked ? "disponivel" : "indisponivel",
+ 
                 };
+                inDisponivel.checked ? edicao.situacao = "disponivel" : "";
                 for (let ind = 0; ind < vetApartamentos.length; ind++) {
-                    if(vetApartamentos[ind].numero == numero){
+                    if (vetApartamentos[ind].numero == numero) {
                         vetApartamentos[ind] = edicao;
                     }
                 }
                 localStorage.setItem("vetApartamentos", JSON.stringify(vetApartamentos));
                 outSaida.innerHTML = `O apartamento numero ${numero} foi editado com sucesso!`;
-                btEditar.innerHTML ="Editar Apartamento";
+                btEditar.innerHTML = "Editar Apartamento";
                 inNumero.disabled = false;
                 btLimpar.disabled = false;
                 btCadastrar.disabled = false;
                 btDeletar.disabled = false;
+                divDisponivel.style.display = "none";
                 limpar();
             }
         }
     }
 }
-function limpar(event){
+function limpar(event) {
     // event.preventDefault();
     inNumero.value = "";
     rdCidade[0].checked = false;
@@ -171,7 +180,7 @@ function limpar(event){
     inNumero.disabled = false;
     outSaida.innerHTML = "Campos limpos!";
 }
-function deslogar () {
+function deslogar() {
     sessionStorage.removeItem("sessao");
     window.location.href = "login.html";
 }

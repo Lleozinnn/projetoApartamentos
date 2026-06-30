@@ -78,7 +78,7 @@ function exibirAp(apartamentos){
         outAp.innerHTML += criarCard(ap);
     }
 }
-// Função para trocar o estado de um apartamento de disponivel para alugado
+// Função para trocar o estado de um apartamento de disponivel para indisponivel
 function alugar(event) {
     let elemento = event.target;
     if(elemento.className == "btAlugar"){
@@ -89,7 +89,7 @@ function alugar(event) {
         for(let ind = 0; ind < vetAp.length && flag; ind++){
             let ap = vetAp[ind];
             if(ap.numero == numero){
-                ap.situacao = "alugado";
+                ap.situacao = "indisponivel";
                 vetAp[ind] = ap;
                 flag = false;
                 localStorage.setItem("vetApartamentos",JSON.stringify(vetAp));

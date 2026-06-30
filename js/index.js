@@ -32,7 +32,7 @@ const vetApartamentos = [
     "valor": 250000,
     "comodos": "1 sala, 2 quartos, 2 banheiros, 1 cozinha, 1 área de serviço",
     "incluso": "Gás encanado",
-    "situacao": "reservado",
+    "situacao": "indisponivel",
     "cidade": "Santa Teresa"
   },
   {
@@ -95,7 +95,7 @@ const vetApartamentos = [
     "valor": 1800,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Luz, Internet",
-    "situacao": "reservado",
+    "situacao": "indisponivel",
     "cidade": "Santa Maria de Jetibá"
   },
   {
@@ -167,7 +167,7 @@ const vetApartamentos = [
     "valor": 1650,
     "comodos": "1 sala, 2 quartos, 1 banheiro, 1 cozinha",
     "incluso": "Condomínio, Gás",
-    "situacao": "reservado",
+    "situacao": "indisponivel",
     "cidade": "Santa Maria de Jetibá"
   },
   {
@@ -199,7 +199,7 @@ if (!apartamentos) {
 
 // Definindo faixa de preco de acordo com a modalidade de negociacão escolhida.
 function faixaPreco (negociacao){
-  sltPreco.innerHTML = `<option value="" disabled selected>Escolha o Preço</option>`;
+  sltPreco.innerHTML = `<option value="todos"  selected>Todos</option>`;
   if(negociacao == 'aluguel'){
     // Min 950 Max 5500
     for(let ind = 950; ind < 5500; ind += 500){
