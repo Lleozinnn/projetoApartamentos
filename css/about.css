@@ -1,0 +1,35 @@
+main {
+    min-height: 100vh;
+}
+/* Melhora contraste e leitura */
+body{
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Espaço entre elementos */
+.card{
+    margin-bottom: 25px;
+    padding: 25px;
+}
+
+/* Destaque ao navegar com TAB */
+a:focus,
+button:focus{
+    outline: 3px solid blue;
+    outline-offset: 3px;
+}
+
+/* Melhora leitura */
+p, li{
+    text-align: justify;
+}
+
+/* Evita textos pequenos */
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 1.5rem;
+}
