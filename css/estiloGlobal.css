@@ -171,6 +171,18 @@ footer img {
 .contato div img {
     height: 50px;
 }
+#btSair {
+    padding: 10px;
+    z-index: 1;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--text-muted);
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
 @media (max-width: 1300px) {
     .menu {
         display: flex;

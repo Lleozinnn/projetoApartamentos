@@ -1,0 +1,101 @@
+:root {
+    /* Cores de Marca (Baseadas no Logo) */
+    --brand-primary: #2d5a27;
+    /* Verde assinatura profundo (sofisticado) */
+    --brand-secondary: #c2a649;
+    /* Dourado/Bege elegante para destaques */
+    --brand-light: #f4f6f0;
+    /* Off-white esverdeado muito claro (fundos principais) */
+
+    /* Fundos Alternativos (Para criar ritmo visual entre as seções de 100vh) */
+    --bg-dark: #1b3318;
+    /* Verde ultra-escuro para seções de grande impacto */
+    --bg-card: #ffffff;
+    /* Branco puro para destacar os cards do fundo */
+
+    /* Cores de Texto */
+    --text-main: #1c2b19;
+    /* Verde quase preto para máxima legibilidade */
+    --text-muted: #556b52;
+    /* Verde acinzentado para parágrafos e subtítulos */
+    --text-light: #ffffff;
+    /* Texto branco para fundos escuros */
+
+    /* Elementos Interativos e Bordas */
+    --border-color: #e2e8e0;
+    /* Linhas e bordas sutis */
+    --cta-hover: #22451d;
+    /* Variação do verde para estados de hover */
+}
+main {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 150px auto 30px;
+    grid-template-columns: 30px auto 30px;
+    background: linear-gradient(145deg,
+        #2d5a27cc 10%,
+        #c2a649b9 60%
+    );
+}
+form {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: var(--brand-light);
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto repeat(6, auto) auto;
+    border-radius: 20px;
+    place-items: center;
+    align-self: center;
+    justify-self: center;
+}
+form div {
+    display: grid;
+    width: 100%;
+}
+form div div {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+form div div label {
+    padding-right: 20px;
+}
+form h1 {
+    text-align: center;
+}
+.btns {
+    display: grid;
+    grid-template-rows: repeat(2, 40px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+.btns button {
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.btns button:last-child {
+    grid-column: 1 / 4;
+}
+input {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#outSaida {
+    margin: 0;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: var(--brand-secondary);
+}
+@media (max-width: 768px) {
+    .btns {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 40px);
+    }
+    .btns button:last-child {
+    grid-column: auto;
+}
+}

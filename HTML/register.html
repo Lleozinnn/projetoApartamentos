@@ -17,12 +17,13 @@
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
-                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="sobre.html"><button>Sobre</button></a>
                 <a href="contact.html"><button>Contatos</button></a>
             </ul>
             <ul>
                 <a href="register.html"><button>Cadastro</button></a>
                 <a href="login.html"><button>Login</button></a>
+                <a href="apartment.html"><button>Restrito</button></a>
             </ul>
         </nav>
         <div class="nav-item dropdown menu">
@@ -30,7 +31,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">Início</a></li>
-                <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
+                
                 <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
                 <li><a class="dropdown-item" href="about.html">Sobre</a></li>
                 <li>
@@ -38,6 +39,8 @@
                 </li>
                 <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
                 <li><a class="dropdown-item" href="login.html">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rental.html?preco=todos">Área restrita</a></li>
             </ul>
         </div>
     </header>
@@ -51,7 +54,7 @@
                 <p>Preencha o formulário a seguir e realize seu cadastro em instantes</p>
             </article>
 
-            <form action="#">
+            <form>
                 <p id="outSaida"></p>
                 <fieldset class="personalData">
                     <legend>Dados Pessoais</legend>
@@ -92,14 +95,23 @@
                             oninvalid="this.setCustomValidity('Digite uma senha com no mínimo 6 caracteres')"
                             oninput="this.setCustomValidity('')" name="senha">
                     </div>
-                    <p class="genero">
+                    <p class="rdbutton">
                         <span>Gênero:</span>
-                            <input type="radio" name="genero" id="naodefinido" value="naoDefinido" checked disabled required>
+                            <input type="radio" name="rdGenero" id="naodefinido" value="naoDefinido" checked disabled required>
                             <label for="masculino">Selecione um gênero</label>
-                            <input type="radio" name="genero" id="masculino" value="Masculino" required>
+                            <input type="radio" name="rdGenero" id="masculino" value="Masculino" required>
                             <label for="masculino">Masculino</label>
-                            <input type="radio" name="genero" id="feminino" value="Feminino" required>
+                            <input type="radio" name="rdGenero" id="feminino" value="Feminino" required>
                             <label for="feminino">Feminino</label>
+                    </p>
+                    <p class="rdbutton">
+                        <span>Nível:</span>
+                            <input type="radio" name="rdNivel" id="naodefinido" value="naoDefinido" checked disabled required>
+                            <label for="masculino">Selecione um nivel</label>
+                            <input type="radio" name="rdNivel" id="user" value="Usuário" required>
+                            <label for="masculino">Usuário</label>
+                            <input type="radio" name="rdNivel" id="admin" value="Administrador" required>
+                            <label for="feminino">Administrador</label>
                     </p>
                 </fieldset>
                 <fieldset class="termos">
@@ -121,8 +133,9 @@
                         <label for="termo3">Aceito receber comunicações sobre novidades e ofertas</label>
                     </div>
                 </fieldset>
-                <input type="submit" value="Efetuar Cadastro">
+                <button id="btCadastrar">Cadastrar</button>
                 <a href="login.html">Já tenho a conta Pinnacle</a>
+                
             </form>
         </section>
     </main>
@@ -146,7 +159,7 @@
                 <div>
                     <img src="../assets/icons/github.svg" alt="GitHub">
                     <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a
-                            href="https://github.com/Lleozinnn">Leonardo Pinnacle</a></p>
+                            href="https://github.com/Lleozinnn">Leonardo Beling</a></p>
                 </div>
             </article>
             <article class="contato">

@@ -5,15 +5,16 @@ const inEmail = document.getElementById("inEmail");
 const inTelefone = document.getElementById("inTelefone");
 const inNascimento = document.getElementById("inNascimento");
 const inSenha = document.getElementById("inSenha");
-const rdGenero = document.getElementsByName("genero");
+const rdGenero = document.getElementsByName("rdGenero");
+const rdNivel = document.getElementsByName("rdNivel");
 const cheTermo1 = document.getElementById("termo1");
 const cheTermo2 = document.getElementById("termo2");
 const cheTermo3 = document.getElementById("termo3");
-const btnCadastrar = document.getElementById("btnCadastrar");
+const btCadastrar = document.getElementById("btCadastrar");
 const outSaida = document.getElementById("outSaida");
 
 // Escutar evento do botão de cadastro
-btnCadastrar.addEventListener("click", (event) => cadastrar(event));
+btCadastrar.addEventListener("click", (event) => cadastrar(event));
 
 // Criar função que efetua o cadastro no local storage
 function cadastrar(event) {
@@ -25,7 +26,7 @@ function cadastrar(event) {
         telefone: inTelefone.value,
         nascimento: inNascimento.value,
         senha: inSenha.value,
-        
+
     };
     let saida = "";
     if (inNome.value == "" || inCpf.value == "" || inEmail.value == "" || inTelefone.value == "" || inNascimento.value == "" || inSenha.value == "") {
@@ -50,22 +51,24 @@ function cadastrar(event) {
         }
 
     } else if (rdGenero[0].checked == true) {
-        saida = "Selecione um gênero";
-    } else {
-        cadastro.genero = rdGenero[1].checked == true ? "Masculino" : "Feminino";
+            saida = "Selecione um gênero";
+    } else if (rdNivel[0].checked == true) {
+        saida = "Selecione um nível";
     }
-    if (!cheTermo1.checked && !cheTermo2.checked) {
-        cadastro.termos = true;
+    else if (!cheTermo1.checked || !cheTermo2.checked) {
+        cadastro.termos = false;
+        saida = "Aceite pelo menos, os dois primeiros termos para criar conta."
     } else {
+        cadastro.nivel = rdNivel[1].checked == true ? "user" : "admin";
+        cadastro.genero = rdGenero[1].checked == true ? "Masculino" : "Feminino";
         let flag = true;
         let cadastros = localStorage.getItem("vetCadastros") == null ? [] : JSON.parse(localStorage.getItem("vetCadastros"));
         for (let ind = 0; cadastros.length > ind && flag; ind++) {
             let cadastroLs = cadastros[ind];
-            
+
             if (cadastroLs.cpf == inCpf.value) {
-                saida = `${cadastroLs.nome} já está ${
-                cadastro.genero == "Masculino" ? "registrado" : "registrada"
-            }!`
+                saida = `${cadastroLs.nome} já está ${cadastro.genero == "Masculino" ? "registrado" : "registrada"
+                    }!`
                 flag = false;
             }
         }
@@ -75,9 +78,9 @@ function cadastrar(event) {
             console.log(cadastros);
             cadastros.push(cadastro);
             localStorage.setItem("vetCadastros", JSON.stringify(cadastros));
-            saida = `Parabéns ${cadastro.nome}, você foi ${
-                cadastro.genero == "Masculino" ? "registrado" : "registrada"
-            } com sucesso`
+            saida = `Parabéns ${cadastro.nome}, você foi ${cadastro.genero == "Masculino" ? "registrado" : "registrada"
+                } com sucesso`
+            window.location.href = "login.html"
         }
 
     }

@@ -7,61 +7,55 @@
     <link rel="stylesheet" href="../css/estiloGlobal.css">
     <link rel="stylesheet" href="../css/rental.css">
     <title>Aluguel</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
-   <header>
+    <header>
         <img src="../../assets/logo.png" alt="Logotipo Pinnacle Apartamentos">
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
-                <a href="realState.html"><button>Imóveis</button></a>
+
                 <a href="contact.html"><button>Contatos</button></a>
             </ul>
             <ul>
                 <a href="register.html"><button>Cadastro</button></a>
                 <a href="login.html"><button>Login</button></a>
+                <a href="apartment.html"><button>Restrito</button></a>
             </ul>
         </nav>
         <div class="nav-item dropdown menu">
-            <img src="../assets/icons/menu.svg" alt="Seções" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="index.html">Início</a></li>
-            <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
-            <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
-            <li><a class="dropdown-item" href="about.html">Sobre</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
-            <li><a class="dropdown-item" href="login.html">Login</a></li>
-          </ul>
+            <img src="../assets/icons/menu.svg" alt="Seções" class="nav-link dropdown-toggle" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Início</a></li>
+
+                <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
+                <li><a class="dropdown-item" href="about.html">Sobre</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="rental.html?preco=todos">Área restrita</a></li>
+            </ul>
         </div>
     </header>
     <main>
         <section>
-            <h1>Aluguel de Apartamentos</h1>
-            <h2>Selecione um de nossos apartamentos e prossiga com a locação</h2>
+            <article>
+                <h1>Aluguel de Apartamentos</h1>
+                <p>Selecione um de nossos apartamentos e prossiga com a locação</p>
+            </article>
             <div id="outAp">
-                <div>
-                    <h3>Apartamento 101</h3>
-                    <p>apartamento com 2 quartos, 1 banheiro, sala, cozinha, area de serviço e varanda localizado no
-                        primeiro andar de nosso edifício</p>
-                    <button>Alugar</button>
-                </div>
-                <div>
-                    <h3>Apartamento 202</h3>
-                    <p>apartamento com 3 quartos, 2 banheiros, sala, cozinha, area de serviço e varanda localizado no
-                        segundo andar de nosso edifício</p>
-                    <button>Alugar</button>
-                </div>
-                <div>
-                    <h3>Apartamento 303</h3>
-                    <p>apartamento com 2 quartos, 1 banheiro, sala, cozinha, area de serviço e varanda localizado no
-                        terceiro andar de nosso edifício</p>
-                    <button>Alugar</button>
-                </div>
             </div>
         </section>
+        <button id="btSair">Deslogar</button>
     </main>
     <footer>
         <img src="../assets/logo.png" alt="Logo Pinnacle apartamentos">
@@ -82,7 +76,8 @@
                 </div>
                 <div>
                     <img src="../assets/icons/github.svg" alt="GitHub">
-                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a href="https://github.com/Lleozinnn">Leonardo Pinnacle</a></p>
+                    <p><a href="https://github.com/gabrielwestfal">Gabriel Westfal</a> | <a
+                            href="https://github.com/Lleozinnn">Leonardo Beling</a></p>
                 </div>
             </article>
             <article class="contato">
@@ -99,7 +94,9 @@
         </section>
         <p>© 2026 Pinnacle Apartamentos. Todos os direitos reservados.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="../js/rental.js"></script>
 </body>
 
