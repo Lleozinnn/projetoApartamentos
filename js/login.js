@@ -1,26 +1,41 @@
+// Verifica se o usuário já está logado
+let sessao = JSON.parse(sessionStorage.getItem("sessao"))
+if (!(sessao == null)) {
+    window.location.href = sessao.nivel == "user" ? "rental.html" : "apartment.html";
+}
+
 const inCpf = document.getElementById("inCpf");
 const inSenha = document.getElementById("inSenha");
 const btEntrar = document.getElementById("btEntrar");
+const outSaida = document.getElementById("outSaida");
 
-btEntrar.addEventListener("click", (event)=> entrar(event));
+btEntrar.addEventListener("click", (event) => entrar(event));
 
-function entrar (event){
+function entrar(event) {
     event.preventDefault();
-    if(inCpf.value == "" || inSenha.value == ""){
-        alert("Preencha os dois campos")
+    let saida;
+    if (inCpf.value == "" || inSenha.value == "") {
+        saida = "Preencha os dois campos"
         inCpf.value == "" ? inCpf.focus() : inSenha.focus();
-    }else{
+    } else {
+        let flag = true
         let cadastros = JSON.parse(localStorage.getItem("vetCadastros"));
-        console.log(cadastros);
-        for(let ind = 0; cadastros.length > ind; ind++){
+        for (let ind = 0; cadastros.length  > ind && flag; ind++) {
             let cadastro = cadastros[ind];
-            if(cadastro.cpf == inCpf.value && cadastro.senha == inSenha.value){
-                console.log("acheiiiiiiiiiiiiiiiiiiiii")
-                localStorage.setItem("sessao", JSON.stringify(cadastro));
-                console.log(localStorage);
+            if (cadastro.cpf == inCpf.value) {
+                flag = false
+                if (cadastro.senha == inSenha.value) {
+                    sessionStorage.setItem("sessao", JSON.stringify(cadastro))
+                    window.location.href = cadastro.nivel == "user" ? "rental.html?preco=todos" : "apartment.html";
+                }
+                else {
+                    saida = "A senha informada está incorreta"
+                }
             }
-      }
+        }
+        saida = flag ? "O cpf informado ainda não foi cadastrado": saida ;
     }
+    outSaida.innerHTML = saida;
 }
 
 

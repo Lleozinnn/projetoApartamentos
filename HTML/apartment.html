@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estiloGlobal.css">
-    <link rel="stylesheet" href="../css/register-apartment.css">
+    <link rel="stylesheet" href="../css/apartment.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Cadastro de Apartamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estiloGlobal.css">
 </head>
 
 <body>
@@ -17,12 +19,13 @@
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
-                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="sobre.html"><button>Sobre</button></a>
                 <a href="contact.html"><button>Contatos</button></a>
             </ul>
             <ul>
                 <a href="register.html"><button>Cadastro</button></a>
                 <a href="login.html"><button>Login</button></a>
+                <a href="apartment.html"><button>Restrito</button></a>
             </ul>
         </nav>
         <div class="nav-item dropdown menu">
@@ -30,7 +33,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">Início</a></li>
-                <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
+                
                 <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
                 <li><a class="dropdown-item" href="about.html">Sobre</a></li>
                 <li>
@@ -38,6 +41,8 @@
                 </li>
                 <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
                 <li><a class="dropdown-item" href="login.html">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rental.html?preco=todos">Área restrita</a></li>
             </ul>
         </div>
     </header>
@@ -82,11 +87,12 @@
             <div class="btns">
                 <button id="btCadastrar">Cadastrar</button>
                 <button id="btdeletar">Deletar Apartamento</button>
-                <button id="btEditar">Editar Apartemnto</button>
+                <button id="btEditar">Editar Apartamento</button>
+                <button id="btLimpar">Limpar campos</button>
             </div>
             <p id="outSaida"></p>
         </form>
-        
+        <button id="btSair">Deslogar</button>
     </main>
     <footer>
         <img src="../assets/logo.png" alt="Logo Beling apartamentos">
@@ -128,7 +134,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <script src="../js/register-apartment.js"></script>
+    <script src="../js/apartment.js"></script>
 </body>
 
 </html>
