@@ -4,7 +4,7 @@ if (!sessao || sessao.nivel == "user") {
     window.location.href = "rental.html";
 }
 
-
+// referencias aos elementos do HTML
 const inNumero = document.getElementById("inNumero");
 const rdCidade = document.getElementsByName("cidade");
 const inPreco = document.getElementById("inPreco");
@@ -19,7 +19,7 @@ const btLimpar = document.getElementById("btLimpar");
 const btSair = document.getElementById("btSair");
 const inDisponivel = document.getElementById("inDisponivel");
 const divDisponivel = document.getElementById("divDisponivel");
-console.log(inDisponivel.checked);
+// Adicionando eventos aos botões
 btCadastrar.addEventListener("click", (event) => cadastrar(event));
 btDeletar.addEventListener("click", (event) => deletar(event));
 btEditar.addEventListener("click", (event) => editar(event));
@@ -27,8 +27,10 @@ btLimpar.addEventListener("click", (event) => {
     event.preventDefault();
     limpar(event);
 });
+// Ocultando o checkbox de disponibilidade do apartamento
 divDisponivel.style.display = "none";
 btSair.addEventListener("click", deslogar);
+// Função para cadastrar apartamento
 function cadastrar(event) {
 
     event.preventDefault();
@@ -77,6 +79,7 @@ function cadastrar(event) {
         }
     }
 }
+// Função para deletar apartamento
 function deletar(event) {
     event.preventDefault();
     // ferificaçoes se o numero do apartamento no qual o usuario quer deletar foi preenchido corretamente
@@ -103,6 +106,7 @@ function deletar(event) {
     }
 
 }
+// Função para editar apartamento
 function editar(event) {
     event.preventDefault();
     let vetApartamentos = JSON.parse(localStorage.getItem("vetApartamentos"));
@@ -167,6 +171,7 @@ function editar(event) {
         }
     }
 }
+// Função para limpar campos
 function limpar(event) {
     // event.preventDefault();
     inNumero.value = "";
@@ -180,6 +185,7 @@ function limpar(event) {
     inNumero.disabled = false;
     outSaida.innerHTML = "Campos limpos!";
 }
+// Função para deslogar
 function deslogar() {
     sessionStorage.removeItem("sessao");
     window.location.href = "login.html";

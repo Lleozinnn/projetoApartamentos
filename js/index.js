@@ -1,6 +1,8 @@
+// Referencias aos elementos do HTML
 const sltNegociacao = document.getElementById("sltNegociacao");
 const sltPreco = document.getElementById("sltPreco");
 
+// Adicionando evento ao select de negociação
 sltNegociacao.addEventListener("change", () => {
   console.log(sltNegociacao.value);
   faixaPreco(sltNegociacao.value);
@@ -191,7 +193,7 @@ const vetApartamentos = [
 ];
 
 let apartamentos = localStorage.getItem("vetApartamentos");
-// Verificação se o objeto apartamentos já está definido
+
 // Se não estiver, define-o.
 if (!apartamentos) {
     localStorage.setItem("vetApartamentos",JSON.stringify(vetApartamentos));
