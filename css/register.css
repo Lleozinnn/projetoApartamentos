@@ -119,12 +119,12 @@ form fieldset {
     font-size: 0.9em;
 }
 
-.genero {
+.rdbutton {
     grid-column: span 2;
     text-align: center;
 }
 
-.genero input {
+.rdbutton input {
     margin-left: 15px;
 }
 
@@ -149,7 +149,7 @@ legend {
     margin-left: 10px;
 }
 
-input[type="submit"] {
+form button {
     border: 2px solid var(--border-color);
     background-color: var(--brand-primary);
     color: var(--text-light);
@@ -169,6 +169,12 @@ a {
     text-decoration: none;
     align-self: center;
     justify-self: end;
+}
+#outSaida {
+    text-align: center;
+    color: var(--text-light);
+    background-color: #c2a649;
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {

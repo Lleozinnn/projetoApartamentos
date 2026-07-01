@@ -17,12 +17,14 @@
         <nav>
             <ul>
                 <a href="index.html"><button>Início</button></a>
-                <a href="realState.html"><button>Imóveis</button></a>
+                <a href="rental.html?preco=todos"><button>Imóveis</button></a>
+                <a href="about.html"><button>Sobre</button></a>
                 <a href="contact.html"><button>Contatos</button></a>
             </ul>
             <ul>
                 <a href="register.html"><button>Cadastro</button></a>
                 <a href="login.html"><button>Login</button></a>
+                <a href="apartment.html"><button>Restrito</button></a>
             </ul>
         </nav>
         <div class="nav-item dropdown menu">
@@ -30,7 +32,7 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="index.html">Início</a></li>
-                <li><a class="dropdown-item" href="realState.html">Imóveis</a></li>
+                <li><a class="dropdown-item" href="rental.html?preco=todos">Imóveis</a></li>
                 <li><a class="dropdown-item" href="contact.html">Contatos</a></li>
                 <li><a class="dropdown-item" href="about.html">Sobre</a></li>
                 <li>
@@ -38,6 +40,8 @@
                 </li>
                 <li><a class="dropdown-item" href="register.html">Cadastro</a></li>
                 <li><a class="dropdown-item" href="login.html">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="rental.html?preco=todos">Área restrita</a></li>
             </ul>
         </div>
     </header>
@@ -79,6 +83,13 @@
                 <label for="inIncluso">Incluso:</label>
                 <input type="text" id="inIncluso" name="incluso" required>
             </div>
+             <div id="divDisponivel">
+                <span>Quer disponibilizar o apartamento:</span>
+                <div>
+                    <input type="checkbox" id="inDisponivel" name="disponivel" value="sim" >
+                    <label for="st">Disponível</label>  
+                </div>
+            </div>
             <div class="btns">
                 <button id="btCadastrar">Cadastrar</button>
                 <button id="btdeletar">Deletar Apartamento</button>
@@ -87,7 +98,7 @@
             </div>
             <p id="outSaida"></p>
         </form>
-        
+        <button id="btSair">Deslogar</button>
     </main>
     <footer>
         <img src="../assets/logo.png" alt="Logo Beling apartamentos">

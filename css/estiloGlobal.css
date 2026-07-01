@@ -67,6 +67,7 @@ nav {
 nav ul {
     display: flex;
     margin-bottom: 0;
+    
 }
 nav ul button {
     margin-right: 10px;
@@ -171,7 +172,19 @@ footer img {
 .contato div img {
     height: 50px;
 }
-@media (max-width: 1300px) {
+#btSair {
+    padding: 10px;
+    z-index: 1;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--text-muted);
+    background-color: var(--brand-primary);
+    color: var(--text-light);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+@media (max-width: 1500px) {
     .menu {
         display: flex;
     }

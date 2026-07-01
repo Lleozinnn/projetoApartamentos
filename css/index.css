@@ -71,6 +71,7 @@ main {
     outline: none;
 }
 #hero form input[type="submit"] {
+    grid-column: span 3;
     background-color: var(--brand-primary);
     color: var(--text-light);
     border: none;
@@ -400,7 +401,7 @@ main {
 }
 
 /* Breakpoint - SMARTPHONE */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     main{
         font-size: 12px;
     }
@@ -411,7 +412,8 @@ main {
     }
 
     #hero form {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         grid-column: span 3;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);

@@ -5,15 +5,16 @@ const inEmail = document.getElementById("inEmail");
 const inTelefone = document.getElementById("inTelefone");
 const inNascimento = document.getElementById("inNascimento");
 const inSenha = document.getElementById("inSenha");
-const rdGenero = document.getElementsByName("genero");
+const rdGenero = document.getElementsByName("rdGenero");
+const rdNivel = document.getElementsByName("rdNivel");
 const cheTermo1 = document.getElementById("termo1");
 const cheTermo2 = document.getElementById("termo2");
 const cheTermo3 = document.getElementById("termo3");
-const btnCadastrar = document.getElementById("btnCadastrar");
+const btCadastrar = document.getElementById("btCadastrar");
 const outSaida = document.getElementById("outSaida");
 
 // Escutar evento do botão de cadastro
-btnCadastrar.addEventListener("click", (event) => cadastrar(event));
+btCadastrar.addEventListener("click", (event) => cadastrar(event));
 
 // Criar função que efetua o cadastro no local storage
 function cadastrar(event) {
@@ -25,16 +26,16 @@ function cadastrar(event) {
         telefone: inTelefone.value,
         nascimento: inNascimento.value,
         senha: inSenha.value,
-        
+
     };
     let saida = "";
-    if (inNome.value == "" || inCpf.value == "" || inEmail.value == "" || inTelefone.value == "" || inNascimento.value == "" || inSenha.value == "") {
+    if (inNome.value == "" || inCpf.value == "" || inEmail.value == "" || inTelefone.value == "" || inNascimento.value == "" || inSenha.value == "" || inSenha.value.length < 5 || inCpf.value.length !== 14) {
         if (inNome.value == "") {
             inNome.focus();
             saida = "Preencha o campo nome";
-        } else if (inCpf.value == "") {
+        } else if (inCpf.value == "" || inCpf.value.length !== 14) {
             inCpf.focus();
-            saida = "Preencha o campo CPF";
+            saida = "Preencha o campo CPF (pontos e hífens)";
         } else if (inEmail.value == "") {
             inEmail.focus();
             saida = "Preencha o campo email";
@@ -44,42 +45,42 @@ function cadastrar(event) {
         } else if (inNascimento.value == "") {
             inNascimento.focus();
             saida = "Preencha o campo nascimento";
-        } else if (inSenha.value == "") {
+        } else if (inSenha.value == "" || inSenha.value.length < 5) {
             inSenha.focus();
-            saida = "Preencha o campo senha";
+            saida = "Preencha o campo senha (mínimo de 5 caracteres)";
+            console.log("pass")
         }
-
+        // Verifica se o gênero e o nível foram selecionados
     } else if (rdGenero[0].checked == true) {
-        saida = "Selecione um gênero";
-    } else {
-        cadastro.genero = rdGenero[1].checked == true ? "Masculino" : "Feminino";
+            saida = "Selecione um gênero";
+    } else if (rdNivel[0].checked == true) {
+        saida = "Selecione um nível";
     }
-    if (!cheTermo1.checked && !cheTermo2.checked) {
-        cadastro.termos = true;
+    // Verifica se os termos foram aceitos
+    else if (!cheTermo1.checked || !cheTermo2.checked) {
+        saida = "Aceite pelo menos, os dois primeiros termos para criar conta.";
     } else {
+        cadastro.nivel = rdNivel[1].checked == true ? "user" : "admin";
+        cadastro.genero = rdGenero[1].checked == true ? "Masculino" : "Feminino";
         let flag = true;
         let cadastros = localStorage.getItem("vetCadastros") == null ? [] : JSON.parse(localStorage.getItem("vetCadastros"));
         for (let ind = 0; cadastros.length > ind && flag; ind++) {
             let cadastroLs = cadastros[ind];
-            
             if (cadastroLs.cpf == inCpf.value) {
-                saida = `${cadastroLs.nome} já está ${
-                cadastro.genero == "Masculino" ? "registrado" : "registrada"
-            }!`
+                saida = `${cadastroLs.nome} já está ${cadastro.genero == "Masculino" ? "registrado" : "registrada"
+                    }!`;
                 flag = false;
             }
         }
+        // Se o cpf não estiver cadastrado, adiciona o novo cadastro ao local storage
         if (flag) {
             cadastro.comunicacao = cheTermo3.checked ? true : false;
-            console.log(cadastro);
-            console.log(cadastros);
             cadastros.push(cadastro);
             localStorage.setItem("vetCadastros", JSON.stringify(cadastros));
-            saida = `Parabéns ${cadastro.nome}, você foi ${
-                cadastro.genero == "Masculino" ? "registrado" : "registrada"
-            } com sucesso`
+            saida = `Parabéns ${cadastro.nome}, você foi ${cadastro.genero == "Masculino" ? "registrado" : "registrada"
+                } com sucesso`
+            window.location.href = "login.html"
         }
-
     }
     outSaida.innerHTML = saida;
 }
