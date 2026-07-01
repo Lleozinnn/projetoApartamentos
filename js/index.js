@@ -4,7 +4,6 @@ const sltPreco = document.getElementById("sltPreco");
 
 // Adicionando evento ao select de negociação
 sltNegociacao.addEventListener("change", () => {
-  console.log(sltNegociacao.value);
   faixaPreco(sltNegociacao.value);
 });
 

@@ -67,6 +67,7 @@ nav {
 nav ul {
     display: flex;
     margin-bottom: 0;
+    
 }
 nav ul button {
     margin-right: 10px;
@@ -183,7 +184,7 @@ footer img {
     bottom: 20px;
     right: 20px;
 }
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
     .menu {
         display: flex;
     }
