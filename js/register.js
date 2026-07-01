@@ -50,12 +50,13 @@ function cadastrar(event) {
             saida = "Preencha o campo senha (mínimo de 5 caracteres)";
             console.log("pass")
         }
-
+        // Verifica se o gênero e o nível foram selecionados
     } else if (rdGenero[0].checked == true) {
             saida = "Selecione um gênero";
     } else if (rdNivel[0].checked == true) {
         saida = "Selecione um nível";
     }
+    // Verifica se os termos foram aceitos
     else if (!cheTermo1.checked || !cheTermo2.checked) {
         saida = "Aceite pelo menos, os dois primeiros termos para criar conta.";
     } else {
@@ -71,6 +72,7 @@ function cadastrar(event) {
                 flag = false;
             }
         }
+        // Se o cpf não estiver cadastrado, adiciona o novo cadastro ao local storage
         if (flag) {
             cadastro.comunicacao = cheTermo3.checked ? true : false;
             cadastros.push(cadastro);

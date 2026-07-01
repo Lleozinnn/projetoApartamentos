@@ -1,3 +1,4 @@
+// Verifica se o usuário está logado, caso não esteja, redireciona para a página de login.
 let sessao = JSON.parse(sessionStorage.getItem("sessao"))
 if (!sessao) {
     window.location.href = "login.html";
@@ -27,7 +28,7 @@ function filtrar (){
     let modoProcura = precoTratado == "todos" ? "todos" : "preco";
     precoMin = precoTratado[0];
     precoMax = precoTratado[1];
-    
+    // Percorre o vetor de apartamentos e verifica se o apartamento se encaixa com as preferencias do usuario.
     for(let ind = 0; ind < vetApartamentos.length; ind++){
         let ap = vetApartamentos[ind];
         if(modoProcura == "preco" && ap.negociacao == negociacao && ap.cidade == cidade && ap.valor <= precoMax && ap.valor >= precoMin && ap.situacao == "disponivel"){
